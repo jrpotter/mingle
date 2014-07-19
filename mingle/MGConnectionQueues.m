@@ -8,7 +8,7 @@
 
 #import "MGConnectionQueues.h"
 
-static NSInteger queueCount = 3;
+static NSInteger queueCount = 6;
 
 @interface MGConnectionQueues ()
 @property (nonatomic) NSInteger imageIndex;
@@ -36,13 +36,18 @@ static NSInteger queueCount = 3;
 {
     self = [super self];
     if(self) {
+        
         _imageIndex = 0;
         _requestIndex = 0;
         _imageQueues = [[NSMutableArray alloc] init];
         _requestQueues = [[NSMutableArray alloc] init];
+        
+        // Note the queues created must be serial (otherwise, it kind of defeats the purpose
+        // of this class)
         for(NSInteger i = 0; i < queueCount; i++) {
             [_imageQueues addObject:dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL)];
             [_requestQueues addObject:[[NSOperationQueue alloc] init]];
+            [[_requestQueues objectAtIndex:[_requestQueues count]-1] setMaxConcurrentOperationCount:1];
         }
     }
     

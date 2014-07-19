@@ -73,10 +73,14 @@
 #pragma mark - Scroll View Methods
 
 // Here we record the current offset position, so we can then determine
-// whether or not we should proceed with a layout
+// whether or not we should proceed with a layout. Note that if we happen
+// to be on the edge, there may have been another view controller made
+// since we reached the said edge. Thus we query up again here.
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     self.offsetPosition = scrollView.contentOffset;
+    [self refreshLeft:(self.left == nil) refreshRight:(self.right == nil)];
+    
 }
 
 // If it appears the scroll view will stay in the same position, then there is no need
@@ -124,11 +128,8 @@
                 // Slide over controllers
                 self.right = self.active;
                 self.active = self.left;
-                self.left = (self.dataSource) ? [self.dataSource beforePageViewController:self.active] : nil;
-                if(self.left) {
-                    [self addChildViewController:self.left];
-                    [self.scrollView addSubview:self.left.view];
-                }
+                [self refreshLeft:YES refreshRight:NO];
+                
                 
             // Slid to the right
             // If there are two child controllers, the right is offset in the middle
@@ -149,16 +150,9 @@
                 // Slide over controllers
                 self.left = self.active;
                 self.active = self.right;
-                self.right = (self.dataSource) ? [self.dataSource afterPageViewController:self.active] : nil;
-                if(self.right) {
-                    [self addChildViewController:self.right];
-                    [self.scrollView addSubview:self.right.view];
-                }
-                
+                [self refreshLeft:NO refreshRight:YES];
             }
         }
-        
-        [self layout];
         
         // Center the scroll view
         // Returns the first available postion self.active is at
@@ -200,6 +194,43 @@
 
 
 #pragma mark - View Controller Methods
+
+// Try to load the surrounding controllers
+
+- (void)refreshLeft:(BOOL)refreshLeft refreshRight:(BOOL)refreshRight
+{
+    // We should only relayout the page if a change has occurred
+    // Thus we cache the results and check for differences
+    UIViewController *left = self.left;
+    UIViewController *right = self.right;
+    
+    // A refresh should include wiping out the old values
+    if(refreshLeft) self.left = nil;
+    if(refreshRight) self.right = nil;
+    
+    if(self.dataSource) {
+        
+        if(refreshLeft) {
+            self.left = [self.dataSource beforePageViewController:self.active];
+            if(self.left) {
+                [self addChildViewController:self.left];
+                [self.scrollView addSubview:self.left.view];
+            }
+        }
+        
+        if(refreshRight) {
+            self.right = [self.dataSource afterPageViewController:self.active];
+            if(self.right) {
+                [self addChildViewController:self.right];
+                [self.scrollView addSubview:self.right.view];
+            }
+        }
+    }
+    
+    if((refreshLeft && left != self.left) || (refreshRight && right != self.right)) {
+        [self layout];
+    }
+}
 
 // Laying out reorganizes all the constraints, and should be called whenever
 // a change in the active controller is made. This function expects the left,

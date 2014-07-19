@@ -9,6 +9,9 @@
 #import "MGWelcomeViewController.h"
 #import "MGAppDelegate.h"
 
+// Maintain the total number of slides present
+static NSInteger slideCount = 2;
+
 @interface MGWelcomeViewController ()
 
 // Here we maintain the slides (which may or may not be filled)
@@ -28,9 +31,6 @@
 @property (strong, nonatomic) UIPageControl *pageControl;
 @property (strong, nonatomic) MGPageViewController *welcomeSlides;
 @end
-
-// Maintain the total number of slides present
-static NSInteger slideCount = 3;
 
 @implementation MGWelcomeViewController
 

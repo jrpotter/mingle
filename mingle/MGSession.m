@@ -10,4 +10,17 @@
 
 @implementation MGSession
 
+#pragma mark - Initialization
+
++ (id)instance
+{
+    static MGSession *instance = nil;
+    dispatch_once_t token;
+    dispatch_once(&token, ^{
+        instance = [[self alloc] init];
+    });
+    
+    return instance;
+}
+
 @end
