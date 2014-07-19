@@ -143,7 +143,7 @@
     
     // Layout Vertically
     [self.scrollView addConstraints:[NSLayoutConstraint
-                                     constraintsWithVisualFormat:@"V:|-30-[title]-10-[form]-2-[links]-2-[alt]-0-|"
+                                     constraintsWithVisualFormat:@"V:|-30-[title]-10-[form]-2-[links]-2-[alt(==60)]-0-|"
                                      options:NSLayoutFormatAlignAllCenterX
                                      metrics:nil
                                      views:@{

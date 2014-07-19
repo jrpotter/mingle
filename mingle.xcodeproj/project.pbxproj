@@ -27,9 +27,8 @@
 		219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AF11979F24E0060480F /* MGWelcomeViewController.m */; };
 		219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF31979F36D0060480F /* welcome_slide_2.jpg */; };
 		219A9AF71979F36D0060480F /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF41979F36D0060480F /* welcome_slide_1.jpg */; };
-		219A9AF81979F36D0060480F /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF51979F36D0060480F /* welcome_slide_0.jpg */; };
-		219A9AFB1979F9740060480F /* MGLoginAlternativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AFA1979F9740060480F /* MGLoginAlternativeView.m */; };
 		219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */; };
+		219A9B05197A277C0060480F /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9B04197A277C0060480F /* welcome_slide_0.jpg */; };
 		21B5218D1979A666004BB5AD /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B5218C1979A666004BB5AD /* login_background.png */; };
 		21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */; };
 		21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B521921979C188004BB5AD /* MGLoginLinksViewController.m */; };
@@ -75,11 +74,9 @@
 		219A9AF11979F24E0060480F /* MGWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWelcomeViewController.m; sourceTree = "<group>"; };
 		219A9AF31979F36D0060480F /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
 		219A9AF41979F36D0060480F /* welcome_slide_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_1.jpg; sourceTree = "<group>"; };
-		219A9AF51979F36D0060480F /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
-		219A9AF91979F9740060480F /* MGLoginAlternativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginAlternativeView.h; sourceTree = "<group>"; };
-		219A9AFA1979F9740060480F /* MGLoginAlternativeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginAlternativeView.m; sourceTree = "<group>"; };
 		219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginAlternativeViewController.h; sourceTree = "<group>"; };
 		219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginAlternativeViewController.m; sourceTree = "<group>"; };
+		219A9B04197A277C0060480F /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
 		21B5218C1979A666004BB5AD /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
 		21B5218E1979B0DA004BB5AD /* MGLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginFormViewController.h; sourceTree = "<group>"; };
 		21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginFormViewController.m; sourceTree = "<group>"; };
@@ -203,7 +200,7 @@
 			children = (
 				219A9AF31979F36D0060480F /* welcome_slide_2.jpg */,
 				219A9AF41979F36D0060480F /* welcome_slide_1.jpg */,
-				219A9AF51979F36D0060480F /* welcome_slide_0.jpg */,
+				219A9B04197A277C0060480F /* welcome_slide_0.jpg */,
 				21B5218C1979A666004BB5AD /* login_background.png */,
 			);
 			name = Images;
@@ -218,7 +215,8 @@
 				21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */,
 				21B521911979C188004BB5AD /* MGLoginLinksViewController.h */,
 				21B521921979C188004BB5AD /* MGLoginLinksViewController.m */,
-				219A9AFC1979F9DA0060480F /* Alternative Login */,
+				219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */,
+				219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -239,17 +237,6 @@
 				219A9AE51979D6A10060480F /* MGPageViewController.m */,
 			);
 			name = Pages;
-			sourceTree = "<group>";
-		};
-		219A9AFC1979F9DA0060480F /* Alternative Login */ = {
-			isa = PBXGroup;
-			children = (
-				219A9AF91979F9740060480F /* MGLoginAlternativeView.h */,
-				219A9AFA1979F9740060480F /* MGLoginAlternativeView.m */,
-				219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */,
-				219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */,
-			);
-			name = "Alternative Login";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +320,8 @@
 				219A9AF71979F36D0060480F /* welcome_slide_1.jpg in Resources */,
 				219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */,
 				210974A519797BCA00DB2A0F /* InfoPlist.strings in Resources */,
+				219A9B05197A277C0060480F /* welcome_slide_0.jpg in Resources */,
 				210974AD19797BCA00DB2A0F /* Images.xcassets in Resources */,
-				219A9AF81979F36D0060480F /* welcome_slide_0.jpg in Resources */,
 				21B5218D1979A666004BB5AD /* login_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +350,6 @@
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,
-				219A9AFB1979F9740060480F /* MGLoginAlternativeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
