@@ -20,13 +20,16 @@
 		210974BE19797BCA00DB2A0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210974BC19797BCA00DB2A0F /* InfoPlist.strings */; };
 		210974C019797BCA00DB2A0F /* mingleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974BF19797BCA00DB2A0F /* mingleTests.m */; };
 		210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974CA19797C0300DB2A0F /* MGRootViewController.m */; };
-		210974D5197981AA00DB2A0F /* welcome_slide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 210974D1197981AA00DB2A0F /* welcome_slide_1.png */; };
-		210974D6197981AA00DB2A0F /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 210974D2197981AA00DB2A0F /* welcome_slide_2.jpg */; };
-		210974D7197981AA00DB2A0F /* welcome_slide_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 210974D3197981AA00DB2A0F /* welcome_slide_3.png */; };
 		210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974DB1979830E00DB2A0F /* MGLoginViewController.m */; };
 		216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 210974CE1979818300DB2A0F /* Bauhaus93.ttf */; };
 		216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 210974CF1979818300DB2A0F /* Icomoon.ttf */; };
 		219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AE51979D6A10060480F /* MGPageViewController.m */; };
+		219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AF11979F24E0060480F /* MGWelcomeViewController.m */; };
+		219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF31979F36D0060480F /* welcome_slide_2.jpg */; };
+		219A9AF71979F36D0060480F /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF41979F36D0060480F /* welcome_slide_1.jpg */; };
+		219A9AF81979F36D0060480F /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF51979F36D0060480F /* welcome_slide_0.jpg */; };
+		219A9AFB1979F9740060480F /* MGLoginAlternativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AFA1979F9740060480F /* MGLoginAlternativeView.m */; };
+		219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */; };
 		21B5218D1979A666004BB5AD /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B5218C1979A666004BB5AD /* login_background.png */; };
 		21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */; };
 		21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B521921979C188004BB5AD /* MGLoginLinksViewController.m */; };
@@ -64,15 +67,19 @@
 		210974CC197980F500DB2A0F /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		210974CE1979818300DB2A0F /* Bauhaus93.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus93.ttf; sourceTree = "<group>"; };
 		210974CF1979818300DB2A0F /* Icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Icomoon.ttf; sourceTree = "<group>"; };
-		210974D1197981AA00DB2A0F /* welcome_slide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome_slide_1.png; sourceTree = "<group>"; };
-		210974D2197981AA00DB2A0F /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
-		210974D3197981AA00DB2A0F /* welcome_slide_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome_slide_3.png; sourceTree = "<group>"; };
 		210974DA1979830E00DB2A0F /* MGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginViewController.h; sourceTree = "<group>"; };
 		210974DB1979830E00DB2A0F /* MGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginViewController.m; sourceTree = "<group>"; };
 		219A9AE41979D6A10060480F /* MGPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPageViewController.h; sourceTree = "<group>"; };
 		219A9AE51979D6A10060480F /* MGPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPageViewController.m; sourceTree = "<group>"; };
-		219A9AE71979D8000060480F /* MGPageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPageViewControllerDataSource.h; sourceTree = "<group>"; };
-		219A9AED1979F0D50060480F /* MGPageViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPageViewControllerDelegate.h; sourceTree = "<group>"; };
+		219A9AF01979F24E0060480F /* MGWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWelcomeViewController.h; sourceTree = "<group>"; };
+		219A9AF11979F24E0060480F /* MGWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWelcomeViewController.m; sourceTree = "<group>"; };
+		219A9AF31979F36D0060480F /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
+		219A9AF41979F36D0060480F /* welcome_slide_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_1.jpg; sourceTree = "<group>"; };
+		219A9AF51979F36D0060480F /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
+		219A9AF91979F9740060480F /* MGLoginAlternativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginAlternativeView.h; sourceTree = "<group>"; };
+		219A9AFA1979F9740060480F /* MGLoginAlternativeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginAlternativeView.m; sourceTree = "<group>"; };
+		219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginAlternativeViewController.h; sourceTree = "<group>"; };
+		219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginAlternativeViewController.m; sourceTree = "<group>"; };
 		21B5218C1979A666004BB5AD /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
 		21B5218E1979B0DA004BB5AD /* MGLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginFormViewController.h; sourceTree = "<group>"; };
 		21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginFormViewController.m; sourceTree = "<group>"; };
@@ -194,9 +201,9 @@
 		210974D01979818A00DB2A0F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				210974D1197981AA00DB2A0F /* welcome_slide_1.png */,
-				210974D2197981AA00DB2A0F /* welcome_slide_2.jpg */,
-				210974D3197981AA00DB2A0F /* welcome_slide_3.png */,
+				219A9AF31979F36D0060480F /* welcome_slide_2.jpg */,
+				219A9AF41979F36D0060480F /* welcome_slide_1.jpg */,
+				219A9AF51979F36D0060480F /* welcome_slide_0.jpg */,
 				21B5218C1979A666004BB5AD /* login_background.png */,
 			);
 			name = Images;
@@ -211,6 +218,7 @@
 				21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */,
 				21B521911979C188004BB5AD /* MGLoginLinksViewController.h */,
 				21B521921979C188004BB5AD /* MGLoginLinksViewController.m */,
+				219A9AFC1979F9DA0060480F /* Alternative Login */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -218,6 +226,8 @@
 		219A9AE21979D5170060480F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				219A9AF01979F24E0060480F /* MGWelcomeViewController.h */,
+				219A9AF11979F24E0060480F /* MGWelcomeViewController.m */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";
@@ -227,10 +237,19 @@
 			children = (
 				219A9AE41979D6A10060480F /* MGPageViewController.h */,
 				219A9AE51979D6A10060480F /* MGPageViewController.m */,
-				219A9AE71979D8000060480F /* MGPageViewControllerDataSource.h */,
-				219A9AED1979F0D50060480F /* MGPageViewControllerDelegate.h */,
 			);
 			name = Pages;
+			sourceTree = "<group>";
+		};
+		219A9AFC1979F9DA0060480F /* Alternative Login */ = {
+			isa = PBXGroup;
+			children = (
+				219A9AF91979F9740060480F /* MGLoginAlternativeView.h */,
+				219A9AFA1979F9740060480F /* MGLoginAlternativeView.m */,
+				219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */,
+				219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */,
+			);
+			name = "Alternative Login";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,11 +330,11 @@
 			files = (
 				216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */,
 				216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */,
-				210974D7197981AA00DB2A0F /* welcome_slide_3.png in Resources */,
-				210974D6197981AA00DB2A0F /* welcome_slide_2.jpg in Resources */,
+				219A9AF71979F36D0060480F /* welcome_slide_1.jpg in Resources */,
+				219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */,
 				210974A519797BCA00DB2A0F /* InfoPlist.strings in Resources */,
-				210974D5197981AA00DB2A0F /* welcome_slide_1.png in Resources */,
 				210974AD19797BCA00DB2A0F /* Images.xcassets in Resources */,
+				219A9AF81979F36D0060480F /* welcome_slide_0.jpg in Resources */,
 				21B5218D1979A666004BB5AD /* login_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,10 +357,13 @@
 				210974AB19797BCA00DB2A0F /* MGAppDelegate.m in Sources */,
 				219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */,
 				210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */,
+				219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */,
+				219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */,
 				210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */,
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,
+				219A9AFB1979F9740060480F /* MGLoginAlternativeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

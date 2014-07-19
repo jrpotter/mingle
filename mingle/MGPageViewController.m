@@ -9,7 +9,11 @@
 #import "MGPageViewController.h"
 
 @interface MGPageViewController ()
+@property (nonatomic) BOOL changedOffset;
+@property (nonatomic) CGPoint offsetPosition;
 @property (strong, nonatomic) UIScrollView *scrollView;
+
+// The controllers (or nil if non-existant)
 @property (strong, nonatomic) UIViewController *left;
 @property (strong, nonatomic) UIViewController *right;
 @property (strong, nonatomic) UIViewController *active;
@@ -28,7 +32,10 @@
         _active = nil;
         _delegate = nil;
         _dataSource = nil;
+        _changedOffset = YES;
+        _offsetPosition = CGPointMake(0, 0);
         _scrollView = [[UIScrollView alloc] init];
+        [_scrollView setDelegate:self];
         [_scrollView setPagingEnabled:YES];
         [_scrollView setMaximumZoomScale:1.0];
         [_scrollView setMinimumZoomScale:1.0];
@@ -63,85 +70,136 @@
 }
 
 
-#pragma mark - Memory
+#pragma mark - Scroll View Methods
 
-- (void)didReceiveMemoryWarning
+// Here we record the current offset position, so we can then determine
+// whether or not we should proceed with a layout
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [super didReceiveMemoryWarning];
+    self.offsetPosition = scrollView.contentOffset;
 }
 
-
-#pragma mark - Scroll View Methods
+// If it appears the scroll view will stay in the same position, then there is no need
+// to relayout the pages. Thus this sets a flag that checks exactly that.
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if(fabsf(self.offsetPosition.x - targetContentOffset->x) <= 0.1) {
+        self.changedOffset = NO;
+    }
+}
 
 // When the animation ends, we determine our position of the scroll to
 // find out the direction we went. We then realign the controllers accordingly
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    CGFloat x = [scrollView contentOffset].x;
-    CGFloat width = scrollView.contentSize.width;
-    
-    // Need to request another view controller if possible
-    if([self count] >= 2) {
+    if(self.changedOffset) {
         
-        // Slid to the left
-        if(x <= 0.1) {
-            
-            if(self.delegate) {
-                [self.delegate willSlideLeft];
+        CGFloat x = [scrollView contentOffset].x;
+        CGFloat width = scrollView.contentSize.width;
+        CGFloat f_width = scrollView.frame.size.width;
+        
+        // Total number of current view controllers
+        NSInteger total = 0;
+        for(id page in [self controllersToArray]) {
+            if(page != [NSNull null]) {
+                total += 1;
             }
+        }
+        
+        // Need to request another view controller if possible
+        if(total >= 2) {
             
-            if(self.right) {
-                [self.right.view removeFromSuperview];
-                [self.right removeFromParentViewController];
+            // Slid to the left
+            if(x <= 0.1) {
+                
+                if(self.delegate) {
+                    [self.delegate didSlideLeft:self];
+                }
+                
+                if(self.right) {
+                    [self.right.view removeFromSuperview];
+                    [self.right removeFromParentViewController];
+                }
+                
+                // Slide over controllers
+                self.right = self.active;
+                self.active = self.left;
+                self.left = (self.dataSource) ? [self.dataSource beforePageViewController:self.active] : nil;
+                if(self.left) {
+                    [self addChildViewController:self.left];
+                    [self.scrollView addSubview:self.left.view];
+                }
+                
+            // Slid to the right
+            // If there are two child controllers, the right is offset in the middle
+            // If there are three, the right is 2/3 of the way over. Therefore, in both
+            // cases, if the offset is greater than or equal to half the width, we must
+            // be in the right controller.
+            } else if(fabsf(x - width / 2) <= 0.1 || x > width / 2) {
+                
+                if(self.delegate) {
+                    [self.delegate didSlideRight:self];
+                }
+                
+                if(self.left) {
+                    [self.left.view removeFromSuperview];
+                    [self.left removeFromParentViewController];
+                }
+                
+                // Slide over controllers
+                self.left = self.active;
+                self.active = self.right;
+                self.right = (self.dataSource) ? [self.dataSource afterPageViewController:self.active] : nil;
+                if(self.right) {
+                    [self addChildViewController:self.right];
+                    [self.scrollView addSubview:self.right.view];
+                }
+                
             }
-            
-            // Slide over controllers
-            self.right = self.active;
-            self.active = self.left;
-            self.left = (self.dataSource) ? [self.dataSource beforePageViewController:self.active] : nil;
-            
-        // Slid to the right
-        // If there are two child controllers, the right is offset in the middle
-        // If there are three, the right is 2/3 of the way over. Therefore, in both
-        // cases, if the offset is greater than or equal to half the width, we must
-        // be in the right controller.
-        } else if(fabsf(x - width / 2) <= 0.1 || x > width / 2) {
-            
-            if(self.delegate) {
-                [self.delegate willSlideRight];
-            }
-            
-            if(self.left) {
-                [self.left.view removeFromSuperview];
-                [self.left removeFromParentViewController];
-            }
-            
-            // Slide over controllers
-            self.left = self.active;
-            self.active = self.right;
-            self.right = (self.dataSource) ? [self.dataSource afterPageViewController:self.active] : nil;
-            
         }
         
         [self layout];
+        
+        // Center the scroll view
+        // Returns the first available postion self.active is at
+        // Note this should always be either 0 or 1 since active could either
+        // be the first controller or the center one (of three controllers)
+        NSInteger activePosition = (self.left == nil) ? 0 : 1;
+        [self.scrollView setContentOffset:CGPointMake(f_width * activePosition, 0) animated:NO];
+    }
+    
+    // Reset
+    self.changedOffset = YES;
+}
+
+
+#pragma mark - Convenience Methods
+
+// Returns the controllers to an array (replacing any nils with NSNulls)
+- (NSArray *)controllersToArray
+{
+    NSMutableArray *controllers = [[NSMutableArray alloc] initWithCapacity:3];
+    [controllers addObject:(self.left ? self.left : [NSNull null])];
+    [controllers addObject:(self.active ? self.active : [NSNull null])];
+    [controllers addObject:(self.right ? self.right : [NSNull null])];
+    
+    return controllers;
+}
+
+// This is a convenience function to perform a certain action on
+// all non-Null pages
+- (void)onControllers:(void (^)(UIViewController *))block
+{
+    for(id page in [self controllersToArray]) {
+        if(page != [NSNull null]) {
+            UIViewController *controller = (UIViewController *)page;
+            block(controller);
+        }
     }
 }
 
 
 #pragma mark - View Controller Methods
-
-// Returns the number of currently active view controllers
-- (NSInteger)count
-{
-    NSInteger total = 0;
-    for(UIViewController *controller in @[self.left, self.active, self.right]) {
-        if(controller) {
-            total += 1;
-        }
-    }
-    
-    return total;
-}
 
 // Laying out reorganizes all the constraints, and should be called whenever
 // a change in the active controller is made. This function expects the left,
@@ -149,30 +207,34 @@
 // componesate for this.
 - (void)layout
 {
+    NSInteger __block index = 0;
+    NSString __block *visual_layout = @"H:|";
+    NSMutableDictionary __block *views = [[NSMutableDictionary alloc] initWithObjectsAndKeys:self.scrollView, @"scroll", nil];
+    
     // Clear current constraints
     for(NSLayoutConstraint *constraint in self.scrollView.constraints) {
         [self.scrollView removeConstraint:constraint];
     }
     
     // Build Horizontal Layout
-    NSString *visual_layout = @"H:|";
-    NSMutableDictionary *views = [[NSMutableDictionary alloc] initWithCapacity:3];
-    [views setObject:self.scrollView forKey:@"scroll"];
-    
-    NSInteger index = 0;
-    for(UIViewController *controller in @[self.left, self.active, self.right]) {
-        if(controller) {
-            NSString *next = [NSString stringWithFormat:@"button_%d", index++];
-            NSString *visual_next = [NSString stringWithFormat:@"-0-[%@(==scroll)]", next];
-            [views setObject:controller.view forKey:next];
-            visual_layout = [visual_layout stringByAppendingString:visual_next];
-            [self.scrollView addConstraints:[NSLayoutConstraint
-                                             constraintsWithVisualFormat:@"V|-0-[view(==scroll)]-0-|"
-                                             options:NSLayoutFormatAlignAllCenterX
-                                             metrics:nil
-                                             views:@{@"view": controller.view, @"scroll": self.scrollView}]];
-        }
-    }
+    [self onControllers:^(UIViewController *controller) {
+        
+        // Continue collecting views
+        NSString *next = [NSString stringWithFormat:@"view_%d", (int)index++];
+        [views setObject:controller.view forKey:next];
+        
+        // Continue building visual format string
+        NSString *visual_next = [NSString stringWithFormat:@"-0-[%@(==scroll)]", next];
+        visual_layout = [visual_layout stringByAppendingString:visual_next];
+        
+        // Layout vertically
+        [controller.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.scrollView addConstraints:[NSLayoutConstraint
+                                         constraintsWithVisualFormat:@"V:|-0-[view(==scroll)]-0-|"
+                                         options:NSLayoutFormatAlignAllCenterX
+                                         metrics:nil
+                                         views:@{@"view": controller.view, @"scroll": self.scrollView}]];
+    }];
     
     // Finish Laying out
     if(index > 0) {
@@ -185,15 +247,13 @@
 }
 
 // This sets the currently active view controller
-- (void)setViewController:(UIViewController *)controller
+- (void)setActiveViewController:(UIViewController *)controller
 {
     // We first clear out cached controllers
-    for(UIViewController *controller in @[self.left, self.active, self.right]) {
-        if(controller) {
-            [controller.view removeFromSuperview];
-            [controller removeFromParentViewController];
-        }
-    }
+    [self onControllers:^(UIViewController *controller) {
+        [controller.view removeFromSuperview];
+        [controller removeFromParentViewController];
+    }];
     
     // Attempt to set the controllers
     self.active = controller;
@@ -203,12 +263,10 @@
     }
     
     // Finish
-    for(UIViewController *controller in @[self.left, self.active, self.right]) {
-        if(controller) {
-            [self addChildViewController:controller];
-            [self.view addSubview:controller.view];
-        }
-    }
+    [self onControllers:^(UIViewController *controller) {
+        [self addChildViewController:controller];
+        [self.scrollView addSubview:controller.view];
+    }];
     
     [self layout];
 }

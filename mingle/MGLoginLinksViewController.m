@@ -12,8 +12,8 @@ static NSString *forgot_title = @"Recover";
 static NSString *sign_up_title = @"Sign Up";
 
 @interface MGLoginLinksViewController ()
-@property (strong, nonatomic) UIButton *forgotButton;
 @property (strong, nonatomic) UIButton *signUpButton;
+@property (strong, nonatomic) UIButton *forgotButton;
 @end
 
 @implementation MGLoginLinksViewController
@@ -25,13 +25,13 @@ static NSString *sign_up_title = @"Sign Up";
     self = [super init];
     if(self) {
         
-        _forgotButton = [[UIButton alloc] init];
-        [_forgotButton setTitle:@"Forgot Password?" forState:UIControlStateNormal];
-        [_forgotButton addTarget:self action:@selector(openForgotLink) forControlEvents:UIControlEventTouchUpInside];
-        
         _signUpButton = [[UIButton alloc] init];
         [_signUpButton setTitle:@"Sign Up!" forState:UIControlStateNormal];
         [_signUpButton addTarget:self action:@selector(openSignUpLink) forControlEvents:UIControlEventTouchUpInside];
+        
+        _forgotButton = [[UIButton alloc] init];
+        [_forgotButton setTitle:@"Forgot Password?" forState:UIControlStateNormal];
+        [_forgotButton addTarget:self action:@selector(openForgotLink) forControlEvents:UIControlEventTouchUpInside];
         
         for(UIButton *button in @[_signUpButton, _forgotButton]) {
             [button.titleLabel setFont:[MINGLE_FONT fontWithSize:14]];
@@ -45,8 +45,8 @@ static NSString *sign_up_title = @"Sign Up";
 
 - (void)dealloc
 {
-    [_forgotButton removeTarget:self action:@selector(openForgotLink) forControlEvents:UIControlEventTouchUpInside];
     [_signUpButton removeTarget:self action:@selector(openSignUpLink) forControlEvents:UIControlEventTouchUpInside];
+    [_forgotButton removeTarget:self action:@selector(openForgotLink) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -57,17 +57,17 @@ static NSString *sign_up_title = @"Sign Up";
     [super viewDidLoad];
     
     // Build Hierarchy
-    [self.view addSubview:self.forgotButton];
     [self.view addSubview:self.signUpButton];
+    [self.view addSubview:self.forgotButton];
     
     // Layout
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"H:|-0-[forgot]-(>=0)-[sign_up]-0-|"
+                               constraintsWithVisualFormat:@"H:|-0-[sign_up]-(>=0)-[forgot]-0-|"
                                options:NSLayoutFormatAlignAllCenterY
                                metrics:nil
-                               views:@{@"forgot": self.forgotButton, @"sign_up": self.signUpButton}]];
+                               views:@{@"sign_up": self.signUpButton, @"forgot": self.forgotButton}]];
     
-    for(UIButton *button in @[self.forgotButton, self.signUpButton]) {
+    for(UIButton *button in @[self.signUpButton, self.forgotButton]) {
         [self.view addConstraints:[NSLayoutConstraint
                                    constraintsWithVisualFormat:@"V:|-0-[button]-0-|"
                                    options:NSLayoutFormatAlignAllCenterX

@@ -8,6 +8,7 @@
 
 #import "MGLoginFormViewController.h"
 #import "MGAppDelegate.h"
+#import "MGWelcomeViewController.h"
 
 @interface MGLoginFormViewController ()
 
@@ -138,7 +139,7 @@
 - (void)submitForm
 {
     MGAppDelegate *ad = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
-    ad.window.rootViewController = [[UIViewController alloc] init];
+    ad.window.rootViewController = [[MGWelcomeViewController alloc] init];
     /*[[MGSession instance] login:@{
      @"email": self.emailField.text,
      @"password": self.passwordField.text

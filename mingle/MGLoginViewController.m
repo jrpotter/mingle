@@ -9,6 +9,7 @@
 #import "MGLoginViewController.h"
 #import "MGLoginFormViewController.h"
 #import "MGLoginLinksViewController.h"
+#import "MGLoginAlternativeViewController.h"
 
 @interface MGLoginViewController ()
 
@@ -22,6 +23,9 @@
 @property (strong, nonatomic) UILabel *applicationTitle;
 @property (strong, nonatomic) MGLoginFormViewController *form;
 @property (strong, nonatomic) MGLoginLinksViewController *links;
+
+// Allow the user to login with an account other than Mingle.
+@property (strong, nonatomic) MGLoginAlternativeViewController *alternatives;
 
 @end
 
@@ -51,6 +55,9 @@
         _links = [[MGLoginLinksViewController alloc] init];
         [_links.view setTranslatesAutoresizingMaskIntoConstraints:NO];
         
+        _alternatives = [[MGLoginAlternativeViewController alloc] init];
+        [_alternatives.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
         // We ensure that anytime the user clicks outside of the textfields,
         // the keyboards are hidden away.
         [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]
@@ -76,10 +83,13 @@
     // Build Hiearchy
     [self addChildViewController:self.form];
     [self addChildViewController:self.links];
+    [self addChildViewController:self.alternatives];
+    
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.applicationTitle];
     [self.scrollView addSubview:self.form.view];
     [self.scrollView addSubview:self.links.view];
+    [self.scrollView addSubview:self.alternatives.view];
     
     // Add Constraints (Scroll View)
     [self.view addConstraints:[NSLayoutConstraint
@@ -124,17 +134,25 @@
                                      multiplier:1.0
                                      constant:0]];
     
+    // Add Constraints (Alternative)
+    [self.scrollView addConstraints:[NSLayoutConstraint
+                                     constraintsWithVisualFormat:@"H:|-0-[alt(==scroll)]-0-|"
+                                     options:NSLayoutFormatAlignAllCenterY
+                                     metrics:nil
+                                     views:@{@"scroll": self.scrollView, @"alt": self.alternatives.view}]];
+    
     // Layout Vertically
-    [self.view addConstraints:
-     [NSLayoutConstraint
-      constraintsWithVisualFormat:@"V:|-30-[title]-10-[form]-2-[links(==20)]"
-      options:NSLayoutFormatAlignAllCenterX
-      metrics:nil
-      views:@{
-              @"title": self.applicationTitle,
-              @"form": self.form.view,
-              @"links": self.links.view
-      }]];
+    [self.scrollView addConstraints:[NSLayoutConstraint
+                                     constraintsWithVisualFormat:@"V:|-30-[title]-10-[form]-2-[links]-2-[alt]-0-|"
+                                     options:NSLayoutFormatAlignAllCenterX
+                                     metrics:nil
+                                     views:@{
+                                         @"title": self.applicationTitle,
+                                         @"form": self.form.view,
+                                         @"links": self.links.view,
+                                         @"alt": self.alternatives.view,
+                                     }]];
+    
 }
 
 

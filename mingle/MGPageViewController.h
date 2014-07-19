@@ -13,11 +13,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MGPageViewControllerDelegate.h"
-#import "MGPageViewControllerDataSource.h"
+
+@class MGPageViewController;
+
+@protocol MGPageViewControllerDelegate
+- (void)didSlideLeft:(MGPageViewController *)pageViewController;
+- (void)didSlideRight:(MGPageViewController *)pageViewController;
+@end
+
+@protocol MGPageViewControllerDataSource
+- (UIViewController *)beforePageViewController:(UIViewController *)viewController;
+- (UIViewController *)afterPageViewController:(UIViewController *)viewController;
+@end
 
 @interface MGPageViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) NSObject<MGPageViewControllerDelegate> *delegate;
 @property (weak, nonatomic) NSObject<MGPageViewControllerDataSource> *dataSource;
-- (void)setViewController:(UIViewController *)controller;
+- (void)setActiveViewController:(UIViewController *)controller;
 @end
