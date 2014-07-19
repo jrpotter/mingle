@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EF7C68CF-F1ED-4636-A63A-10F7FC23ABCD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>mingle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DCD172F5-A582-438A-AE17-633211C74CEC</key>
+		<string>https://github.com/jrpotter/mingle.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>mingle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DCD172F5-A582-438A-AE17-633211C74CEC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jrpotter/mingle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DCD172F5-A582-438A-AE17-633211C74CEC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DCD172F5-A582-438A-AE17-633211C74CEC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mingle</string>
+		</dict>
+	</array>
+</dict>
+</plist>
