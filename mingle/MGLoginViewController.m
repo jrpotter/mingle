@@ -57,6 +57,7 @@
         
         _alternatives = [[MGLoginAlternativeViewController alloc] init];
         [_alternatives.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_alternatives.view setBackgroundColor:[MINGLE_LIGHT_COLOR colorWithAlphaComponent:0.3]];
         
         // We ensure that anytime the user clicks outside of the textfields,
         // the keyboards are hidden away.
@@ -86,10 +87,10 @@
     [self addChildViewController:self.alternatives];
     
     [self.view addSubview:self.scrollView];
+    [self.view addSubview:self.alternatives.view];
     [self.scrollView addSubview:self.applicationTitle];
     [self.scrollView addSubview:self.form.view];
     [self.scrollView addSubview:self.links.view];
-    [self.scrollView addSubview:self.alternatives.view];
     
     // Add Constraints (Scroll View)
     [self.view addConstraints:[NSLayoutConstraint
@@ -134,25 +135,41 @@
                                      multiplier:1.0
                                      constant:0]];
     
-    // Add Constraints (Alternative)
-    [self.scrollView addConstraints:[NSLayoutConstraint
-                                     constraintsWithVisualFormat:@"H:|-0-[alt(==scroll)]-0-|"
-                                     options:NSLayoutFormatAlignAllCenterY
-                                     metrics:nil
-                                     views:@{@"scroll": self.scrollView, @"alt": self.alternatives.view}]];
-    
     // Layout Vertically
     [self.scrollView addConstraints:[NSLayoutConstraint
-                                     constraintsWithVisualFormat:@"V:|-30-[title]-10-[form]-2-[links]-2-[alt(==60)]-0-|"
+                                     constraintsWithVisualFormat:@"V:|-30-[title]-10-[form]-2-[links]"
                                      options:NSLayoutFormatAlignAllCenterX
                                      metrics:nil
                                      views:@{
                                          @"title": self.applicationTitle,
                                          @"form": self.form.view,
-                                         @"links": self.links.view,
-                                         @"alt": self.alternatives.view,
+                                         @"links": self.links.view
                                      }]];
     
+    // Add Constraints (Alternative)
+    [self.view addConstraints:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"H:|-0-[alt(==view)]-0-|"
+                               options:NSLayoutFormatAlignAllCenterY
+                               metrics:nil
+                               views:@{@"view": self.view, @"alt": self.alternatives.view}]];
+    
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.alternatives.view
+                              attribute:NSLayoutAttributeTop
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.links.view
+                              attribute:NSLayoutAttributeBottom
+                              multiplier:1.0
+                              constant:10]];
+    
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:self.alternatives.view
+                              attribute:NSLayoutAttributeBottom
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeBottom
+                              multiplier:1.0
+                              constant:0]];
 }
 
 

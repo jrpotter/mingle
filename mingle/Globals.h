@@ -12,8 +12,10 @@
 // Colors
 #define MINGLE_COLOR                        [UIColor colorWithRed:92/255.0 green:160/255.0 blue:211/255.0 alpha:0.7]
 #define MINGLE_DARK_COLOR                   [UIColor colorWithRed:41/255.0 green:109/255.0 blue:160/255.0 alpha:0.7]
+#define MINGLE_LIGHT_COLOR                  [UIColor colorWithRed:169/255.0 green:237/255.0  blue:255/255.0 alpha:0.7]
 #define SPRINGBOARD_COLOR                   [UIColor colorWithRed:34/255.0 green:34/255.0 blue:34/255.0 alpha:0.7]
 #define MESSAGES_COLOR                      [UIColor colorWithRed:34/255.0 green:34/255.0 blue:34/255.0 alpha:0.7]
+#define TWITTER_COLOR                       [UIColor colorWithRed:85/255.0 green:172/255.0 blue:238/255.0 alpha:0.7]
 
 // Fonts
 #define MINGLE_FONT                         [UIFont fontWithName:@"Bauhaus 93" size:20]
@@ -44,5 +46,6 @@
 #define SETTINGS_ICON                       @"\ue68e"
 #define SPRINGBOARD_ICON                    @"\ue6b8"
 #define STREET_ICON                         @"\ue6c2"
+#define TWITTER_ICON                        @"\ue76d"
 
 #endif

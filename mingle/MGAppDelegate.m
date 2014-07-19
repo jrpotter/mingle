@@ -9,8 +9,11 @@
 #import "MGAppDelegate.h"
 #import "MGRootViewController.h"
 #import "MGLoginViewController.h"
+#import "MGWelcomeViewController.h"
 
 @implementation MGAppDelegate
+
+#pragma mark - System Methods
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -54,5 +57,38 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - Custom Methods
+
+- (void)presentLoginViewController
+{
+    [UIView transitionWithView:self.window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{ self.window.rootViewController = [[MGLoginViewController alloc] init]; }
+                    completion:nil];
+}
+
+- (void)presentPostLoginViewController
+{
+    UIViewController *next = nil;
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"shown_welcome"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shown_welcome"];
+        next = [[MGWelcomeViewController alloc] init];
+    } else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"shown_welcome"];
+        next = [[MGRootViewController alloc] init];
+    }
+    
+    [UIView transitionWithView:self.window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{ self.window.rootViewController = next; }
+                    completion:nil];
+}
+
+
 
 @end

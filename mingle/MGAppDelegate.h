@@ -11,5 +11,6 @@
 @interface MGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+- (void)presentLoginViewController;
+- (void)presentPostLoginViewController;
 @end

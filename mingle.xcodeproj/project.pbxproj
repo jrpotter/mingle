@@ -26,12 +26,17 @@
 		219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AE51979D6A10060480F /* MGPageViewController.m */; };
 		219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AF11979F24E0060480F /* MGWelcomeViewController.m */; };
 		219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF31979F36D0060480F /* welcome_slide_2.jpg */; };
-		219A9AF71979F36D0060480F /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF41979F36D0060480F /* welcome_slide_1.jpg */; };
+		219A9AF71979F36D0060480F /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF41979F36D0060480F /* welcome_slide_0.jpg */; };
 		219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */; };
-		219A9B05197A277C0060480F /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9B04197A277C0060480F /* welcome_slide_0.jpg */; };
 		21B5218D1979A666004BB5AD /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B5218C1979A666004BB5AD /* login_background.png */; };
 		21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */; };
 		21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B521921979C188004BB5AD /* MGLoginLinksViewController.m */; };
+		21E2149B197ACFA7004B16C7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E2149A197ACFA7004B16C7 /* FacebookSDK.framework */; };
+		21E2149F197AD54B004B16C7 /* MGIconButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E2149E197AD54B004B16C7 /* MGIconButtonViewController.m */; };
+		21E214A1197ADC43004B16C7 /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21E214A0197ADC43004B16C7 /* welcome_slide_1.jpg */; };
+		21E214A5197AF4BF004B16C7 /* MGSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214A4197AF4BF004B16C7 /* MGSession.m */; };
+		21E214A8197AF737004B16C7 /* MGConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214A7197AF737004B16C7 /* MGConnection.m */; };
+		21E214AC197B0015004B16C7 /* MGConnectionQueues.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214AB197B0015004B16C7 /* MGConnectionQueues.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,15 +78,24 @@
 		219A9AF01979F24E0060480F /* MGWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWelcomeViewController.h; sourceTree = "<group>"; };
 		219A9AF11979F24E0060480F /* MGWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWelcomeViewController.m; sourceTree = "<group>"; };
 		219A9AF31979F36D0060480F /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
-		219A9AF41979F36D0060480F /* welcome_slide_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_1.jpg; sourceTree = "<group>"; };
+		219A9AF41979F36D0060480F /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
 		219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginAlternativeViewController.h; sourceTree = "<group>"; };
 		219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginAlternativeViewController.m; sourceTree = "<group>"; };
-		219A9B04197A277C0060480F /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
 		21B5218C1979A666004BB5AD /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
 		21B5218E1979B0DA004BB5AD /* MGLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginFormViewController.h; sourceTree = "<group>"; };
 		21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginFormViewController.m; sourceTree = "<group>"; };
 		21B521911979C188004BB5AD /* MGLoginLinksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginLinksViewController.h; sourceTree = "<group>"; };
 		21B521921979C188004BB5AD /* MGLoginLinksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginLinksViewController.m; sourceTree = "<group>"; };
+		21E2149A197ACFA7004B16C7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		21E2149D197AD54B004B16C7 /* MGIconButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGIconButtonViewController.h; sourceTree = "<group>"; };
+		21E2149E197AD54B004B16C7 /* MGIconButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGIconButtonViewController.m; sourceTree = "<group>"; };
+		21E214A0197ADC43004B16C7 /* welcome_slide_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = welcome_slide_1.jpg; path = ../../../Downloads/welcome_slide_1.jpg; sourceTree = "<group>"; };
+		21E214A3197AF4BF004B16C7 /* MGSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSession.h; sourceTree = "<group>"; };
+		21E214A4197AF4BF004B16C7 /* MGSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSession.m; sourceTree = "<group>"; };
+		21E214A6197AF737004B16C7 /* MGConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGConnection.h; sourceTree = "<group>"; };
+		21E214A7197AF737004B16C7 /* MGConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGConnection.m; sourceTree = "<group>"; };
+		21E214AA197B0015004B16C7 /* MGConnectionQueues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGConnectionQueues.h; sourceTree = "<group>"; };
+		21E214AB197B0015004B16C7 /* MGConnectionQueues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGConnectionQueues.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2109749D19797BCA00DB2A0F /* CoreGraphics.framework in Frameworks */,
+				21E2149B197ACFA7004B16C7 /* FacebookSDK.framework in Frameworks */,
 				2109749F19797BCA00DB2A0F /* UIKit.framework in Frameworks */,
 				2109749B19797BCA00DB2A0F /* Foundation.framework in Frameworks */,
 			);
@@ -130,6 +145,7 @@
 		2109749919797BCA00DB2A0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21E2149A197ACFA7004B16C7 /* FacebookSDK.framework */,
 				2109749A19797BCA00DB2A0F /* Foundation.framework */,
 				2109749C19797BCA00DB2A0F /* CoreGraphics.framework */,
 				2109749E19797BCA00DB2A0F /* UIKit.framework */,
@@ -141,8 +157,11 @@
 		210974A019797BCA00DB2A0F /* mingle */ = {
 			isa = PBXGroup;
 			children = (
-				219A9AE31979D68A0060480F /* Pages */,
+				21E214A9197B0003004B16C7 /* Connection */,
+				21E2149C197AD53A004B16C7 /* Buttons */,
 				210974D9197982DC00DB2A0F /* Login */,
+				219A9AE31979D68A0060480F /* Pages */,
+				21E214A2197AF48F004B16C7 /* Session */,
 				219A9AE21979D5170060480F /* Welcome */,
 				210974A919797BCA00DB2A0F /* MGAppDelegate.h */,
 				210974AA19797BCA00DB2A0F /* MGAppDelegate.m */,
@@ -199,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				219A9AF31979F36D0060480F /* welcome_slide_2.jpg */,
-				219A9AF41979F36D0060480F /* welcome_slide_1.jpg */,
-				219A9B04197A277C0060480F /* welcome_slide_0.jpg */,
+				219A9AF41979F36D0060480F /* welcome_slide_0.jpg */,
+				21E214A0197ADC43004B16C7 /* welcome_slide_1.jpg */,
 				21B5218C1979A666004BB5AD /* login_background.png */,
 			);
 			name = Images;
@@ -237,6 +256,35 @@
 				219A9AE51979D6A10060480F /* MGPageViewController.m */,
 			);
 			name = Pages;
+			sourceTree = "<group>";
+		};
+		21E2149C197AD53A004B16C7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				21E2149D197AD54B004B16C7 /* MGIconButtonViewController.h */,
+				21E2149E197AD54B004B16C7 /* MGIconButtonViewController.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		21E214A2197AF48F004B16C7 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				21E214A3197AF4BF004B16C7 /* MGSession.h */,
+				21E214A4197AF4BF004B16C7 /* MGSession.m */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		21E214A9197B0003004B16C7 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				21E214A6197AF737004B16C7 /* MGConnection.h */,
+				21E214A7197AF737004B16C7 /* MGConnection.m */,
+				21E214AA197B0015004B16C7 /* MGConnectionQueues.h */,
+				21E214AB197B0015004B16C7 /* MGConnectionQueues.m */,
+			);
+			name = Connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,10 +365,10 @@
 			files = (
 				216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */,
 				216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */,
-				219A9AF71979F36D0060480F /* welcome_slide_1.jpg in Resources */,
+				219A9AF71979F36D0060480F /* welcome_slide_0.jpg in Resources */,
 				219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */,
 				210974A519797BCA00DB2A0F /* InfoPlist.strings in Resources */,
-				219A9B05197A277C0060480F /* welcome_slide_0.jpg in Resources */,
+				21E214A1197ADC43004B16C7 /* welcome_slide_1.jpg in Resources */,
 				210974AD19797BCA00DB2A0F /* Images.xcassets in Resources */,
 				21B5218D1979A666004BB5AD /* login_background.png in Resources */,
 			);
@@ -342,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				210974AB19797BCA00DB2A0F /* MGAppDelegate.m in Sources */,
+				21E214A8197AF737004B16C7 /* MGConnection.m in Sources */,
 				219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */,
 				210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */,
 				219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */,
@@ -350,6 +399,9 @@
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,
+				21E214A5197AF4BF004B16C7 /* MGSession.m in Sources */,
+				21E2149F197AD54B004B16C7 /* MGIconButtonViewController.m in Sources */,
+				21E214AC197B0015004B16C7 /* MGConnectionQueues.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +520,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/uncresnet/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mingle/mingle-Prefix.pch";
 				INFOPLIST_FILE = "mingle/mingle-Info.plist";
@@ -482,6 +538,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/uncresnet/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mingle/mingle-Prefix.pch";
 				INFOPLIST_FILE = "mingle/mingle-Info.plist";

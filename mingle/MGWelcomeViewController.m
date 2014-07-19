@@ -7,6 +7,7 @@
 //
 
 #import "MGWelcomeViewController.h"
+#import "MGAppDelegate.h"
 
 @interface MGWelcomeViewController ()
 
@@ -65,6 +66,7 @@ static NSInteger slideCount = 3;
         [_finished setBackgroundColor:MINGLE_DARK_COLOR];
         [_finished setTranslatesAutoresizingMaskIntoConstraints:NO];
         [_finished setTitle:@"Continue" forState:UIControlStateNormal];
+        [_finished addTarget:self action:@selector(postLogin) forControlEvents:UIControlEventTouchUpInside];
         
     }
     
@@ -75,6 +77,12 @@ static NSInteger slideCount = 3;
 {
     [_welcomeSlides setDelegate:nil];
     [_welcomeSlides setDataSource:nil];
+}
+
+- (void)postLogin
+{
+    MGAppDelegate *ad = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
+    ad.window.rootViewController = [[UIViewController alloc] init];
 }
 
 
