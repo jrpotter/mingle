@@ -7,8 +7,7 @@
 //
 
 #import "MGLoginFormViewController.h"
-#import "MGAppDelegate.h"
-#import "MGWelcomeViewController.h"
+#import "MGSession.h"
 
 @interface MGLoginFormViewController ()
 
@@ -122,31 +121,6 @@
 }
 
 
-#pragma mark - Form Submission
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (textField == self.emailField) {
-        [self.passwordField becomeFirstResponder];
-    } else if(textField == self.passwordField) {
-        [textField resignFirstResponder];
-        [self submitForm];
-    }
-    
-    return YES;
-}
-
-- (void)submitForm
-{
-    MGAppDelegate *ad = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
-    ad.window.rootViewController = [[MGWelcomeViewController alloc] init];
-    /*[[MGSession instance] login:@{
-     @"email": self.emailField.text,
-     @"password": self.passwordField.text
-     }];*/
-}
-
-
 #pragma mark - Table Setup
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -191,6 +165,121 @@
                                       views:@{@"field": field, @"cell": cell.contentView}]];
     
     return cell;
+}
+
+
+#pragma mark - Form Submission
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.emailField) {
+        [self.passwordField becomeFirstResponder];
+    } else if(textField == self.passwordField) {
+        [textField resignFirstResponder];
+        [self submitForm];
+    }
+    
+    return YES;
+}
+
+// Show that work is being done
+// Add a spinner and overlay that will be removed once the login is complete
+- (UIView *)addOverlay
+{
+    UIView *overlay = [[UIView alloc] init];
+    [overlay setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [overlay setBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:0.6]];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [spinner setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [spinner startAnimating];
+    
+    UIView *window = [[UIApplication sharedApplication] delegate].window;
+    [window addSubview:overlay];
+    [overlay addSubview:spinner];
+    
+    // Add Constraints (Spinner)
+    [overlay addConstraint:[NSLayoutConstraint
+                            constraintWithItem:spinner
+                            attribute:NSLayoutAttributeCenterX
+                            relatedBy:NSLayoutRelationEqual
+                            toItem:overlay
+                            attribute:NSLayoutAttributeCenterX
+                            multiplier:1.0
+                            constant:0]];
+    
+    [overlay addConstraint:[NSLayoutConstraint
+                            constraintWithItem:spinner
+                            attribute:NSLayoutAttributeCenterY
+                            relatedBy:NSLayoutRelationEqual
+                            toItem:overlay
+                            attribute:NSLayoutAttributeCenterY
+                            multiplier:1.0
+                            constant:0]];
+    
+    // Add Constraints (Overlay)
+    [window addConstraints:[NSLayoutConstraint
+                            constraintsWithVisualFormat:@"H:|-0-[overlay(==view)]-0-|"
+                            options:NSLayoutFormatAlignAllCenterY
+                            metrics:nil
+                            views:@{@"overlay": overlay, @"view": window}]];
+    
+    [window addConstraints:[NSLayoutConstraint
+                            constraintsWithVisualFormat:@"V:|-0-[overlay(==view)]-0-|"
+                            options:NSLayoutFormatAlignAllCenterX
+                            metrics:nil
+                            views:@{@"overlay": overlay, @"view": window}]];
+    
+    return overlay;
+}
+
+- (void)submitForm
+{
+    // Check to see if the email looks ok
+    NSString *error = @"Invalid Email Address";
+    NSString *emailRegex = @".+@.+\\..+";
+    if([self.emailField.text rangeOfString:emailRegex options:NSRegularExpressionSearch].location == NSNotFound) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    } else {
+        
+        NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithCapacity:3];
+        [data setObject:self.emailField.text forKey:@"email"];
+        [data setObject:self.passwordField.text forKey:@"password"];
+        [data setObject:[[MGSession instance] getLoginType:MINGLE] forKey:@"type"];
+        
+        // Perform post login attempt logic
+        UIView *overlay = [self addOverlay];
+        [[MGSession instance] login:data complete:^(NSDictionary *response, NSError *error) {
+            
+            [overlay removeFromSuperview];
+            
+            NSString *errorMessage = nil;
+            
+            // Represents an error with connection
+            if(error != nil) {
+                errorMessage = error.description;
+                
+            // Could not get a valid response
+            } else if([response objectForKey:@"code"] == nil) {
+                errorMessage = @"Invalid Response";
+                
+            // Represents an internal error (e.g. invalid credentials)
+            } else if([[response objectForKey:@"code"] intValue] != 0) {
+                errorMessage = [response objectForKey:@"error"];
+            }
+            
+            if(errorMessage != nil) {
+                [[[UIAlertView alloc]
+                  initWithTitle:@"Error"
+                  message:errorMessage
+                  delegate:nil
+                  cancelButtonTitle:@"OK"
+                  otherButtonTitles:nil] show];
+            }
+            
+        }];
+        
+    }
 }
 
 

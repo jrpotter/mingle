@@ -10,7 +10,7 @@
 #import "MGAppDelegate.h"
 
 // Maintain the total number of slides present
-static NSInteger slideCount = 2;
+static NSInteger slideCount = 3;
 
 @interface MGWelcomeViewController ()
 
@@ -81,8 +81,8 @@ static NSInteger slideCount = 2;
 
 - (void)postLogin
 {
-    MGAppDelegate *ad = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
-    ad.window.rootViewController = [[UIViewController alloc] init];
+    MGAppDelegate *appDelegate = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate presentPostLoginViewController];
 }
 
 

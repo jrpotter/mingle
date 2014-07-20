@@ -67,7 +67,7 @@
         
         // Background image from http://subtlepatterns.com/
         // We create a transparent overlay to maintain the desired color
-        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"login_background.png"]]];
+        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mingle_background.png"]]];
         [self.scrollView setBackgroundColor:[MINGLE_COLOR colorWithAlphaComponent:0.65]];
     }
     

@@ -79,7 +79,7 @@
     // Build POST values
     NSString *post = [entries componentsJoinedByString:@"&"];
     NSData *post_data = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    NSString *post_length = [NSString stringWithFormat:@"%d",[post_data length]];
+    NSString *post_length = [NSString stringWithFormat:@"%d", (int)[post_data length]];
 
     // Build URL
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

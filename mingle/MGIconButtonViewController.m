@@ -36,7 +36,7 @@
         [_text setFont:[MINGLE_FONT fontWithSize:25]];
         [_text sizeToFit];
         
-        _button = [[UIButton alloc] init];
+        _button = [[MGIconButton alloc] init];
         [_button setTranslatesAutoresizingMaskIntoConstraints:NO];
         [_button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchDown];
         [_button addTarget:self action:@selector(unchangeColor) forControlEvents:UIControlEventTouchDragExit];
@@ -99,6 +99,12 @@
 - (void)setFont:(UIFont *)font
 {
     [_text setFont:font];
+}
+
+- (void)setFontSize:(CGFloat)fontSize
+{
+    [_icon setFont:[_icon.font fontWithSize:fontSize]];
+    [_text setFont:[_icon.font fontWithSize:fontSize]];
 }
 
 

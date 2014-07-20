@@ -10,6 +10,7 @@
 #import "MGRootViewController.h"
 #import "MGLoginViewController.h"
 #import "MGWelcomeViewController.h"
+#import "MGSession.h"
 
 @implementation MGAppDelegate
 
@@ -18,7 +19,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[MGLoginViewController alloc] init];
+    
+    // Check if a mingle account has been instantiated (this is just the storage of the username and password, which is sent to
+    // every call to the server anyways). Otherwise, see if a Facebook session exists and watch for state changes
+    // If neither is the case, we present the login screen.
+    if([[MGSession instance] getLoginStatus]) {
+        [self presentPostLoginViewController];
+    } else {
+        [self presentLoginViewController];
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
