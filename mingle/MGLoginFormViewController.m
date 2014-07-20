@@ -245,7 +245,7 @@
         NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithCapacity:3];
         [data setObject:self.emailField.text forKey:@"email"];
         [data setObject:self.passwordField.text forKey:@"password"];
-        [data setObject:[[MGSession instance] getLoginType:MINGLE] forKey:@"type"];
+        [data setObject:[[MGSession instance] getLoginType:MINGLE_TYPE] forKey:@"type"];
         
         // Perform post login attempt logic
         UIView *overlay = [self addOverlay];

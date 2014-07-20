@@ -31,6 +31,8 @@ static NSString *aboutTitle = @"About";
     self = [super init];
     if (self) {
         
+        _delegate = nil;
+        
         _header = [[MGSpringboardHeaderViewController alloc] init];
         [_header.view setTranslatesAutoresizingMaskIntoConstraints:NO];
         [_header.view setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.4]];
@@ -42,18 +44,18 @@ static NSString *aboutTitle = @"About";
         [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [_tableView setBackgroundColor:[MINGLE_COLOR colorWithAlphaComponent:0.65]];
         
+        // Layout the section titles, row icons, and row branch enumeration
         _sectionTitles = @[eventTitle, accountTitle, aboutTitle];
-        _sections = @{eventTitle:   @[@"Featured", FEATURED_ICON,
-                                      @"Browse", BROWSE_ICON,
-                                      @"Create", CREATE_ICON,
-                                      @"Search", SEARCH_ICON,
-                                      @"Settings", SETTINGS_ICON],
-                      accountTitle: @[@"Profile", PROFILE_ICON,
-                                      @"Friends", FRIENDS_ICON,
-                                      @"Invite", INVITE_ICON,
-                                      @"Logout", LOGOUT_ION],
-                      aboutTitle:   @[@"About", ABOUT_ICON]
-                    };
+        _sections = @{eventTitle:   @[@"Featured", FEATURED_ICON, [[NSNumber alloc] initWithInt:FEATURED_BRANCH],
+                                      @"Browse",   BROWSE_ICON,   [[NSNumber alloc] initWithInt:BROWSE_BRANCH],
+                                      @"Create",   CREATE_ICON,   [[NSNumber alloc] initWithInt:CREATE_BRANCH],
+                                      @"Search",   SEARCH_ICON,   [[NSNumber alloc] initWithInt:SEARCH_BRANCH],
+                                      @"Settings", SETTINGS_ICON, [[NSNumber alloc] initWithInt:SETTINGS_BRANCH]],
+                      accountTitle: @[@"Profile",  PROFILE_ICON,  [[NSNumber alloc] initWithInt:PROFILE_BRANCH],
+                                      @"Friends",  FRIENDS_ICON,  [[NSNumber alloc] initWithInt:FRIENDS_BRANCH],
+                                      @"Invite",   INVITE_ICON,   [[NSNumber alloc] initWithInt:INVITE_BRANCH],
+                                      @"Logout",   LOGOUT_ION,    [[NSNumber alloc] initWithInt:LOGOUT_BRANCH]],
+                      aboutTitle:   @[@"About",    ABOUT_ICON,    [[NSNumber alloc] initWithInt:ABOUT_BRANCH]]};
         
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mingle_background.png"]]];
     }
@@ -111,35 +113,26 @@ static NSString *aboutTitle = @"About";
 }
 
 
-#pragma mark - Memory
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 #pragma mark - Table View Data Source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellID = [NSString stringWithFormat:@"cellID_%d", (int)indexPath.section];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    
     NSString *title = [self.sectionTitles objectAtIndex:indexPath.section];
-    NSString *label = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 2];
-    NSString *icon = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 2 + 1];
+    NSString *label = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 3];
+    NSString *icon = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 3 + 1];
+    
+    // Create new cell (or cached version)
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:title];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:title];
+    }
     
     // Create new button
     MGIconButtonViewController *controller = [[MGIconButtonViewController alloc] initWithTitle:label icon:icon];
     [controller.view setTranslatesAutoresizingMaskIntoConstraints:NO];
     [controller.button setTextFont:[UIFont fontWithName:@"Helvetica" size:20]];
     
-    // Propagate event to table view
+    // Enable propagation of event to table view
     [controller.button setIdentifier:indexPath];
     [controller.button addTarget:self action:@selector(selectedRow:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -165,6 +158,7 @@ static NSString *aboutTitle = @"About";
     return cell;
 }
 
+// Adjusts the display of the currently active button and propagates delegation outward
 - (void)selectedRow:(id)sender
 {
     static MGIconButton *last = nil;
@@ -176,7 +170,13 @@ static NSString *aboutTitle = @"About";
     last = (MGIconButton *)sender;
     [last setSelected:YES];
     [last setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.35]];
-    [self.tableView scrollToRowAtIndexPath:last.identifier atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    
+    if(self.delegate) {
+        NSIndexPath *path = last.identifier;
+        NSString *title = [self.sectionTitles objectAtIndex:path.section];
+        NSNumber *value = [[self.sections objectForKey:title] objectAtIndex:path.row * 3 + 2];
+        [self.delegate selectedBranch:[value intValue]];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -197,7 +197,7 @@ static NSString *aboutTitle = @"About";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSString *title = [self.sectionTitles objectAtIndex:section];
-    return [[self.sections objectForKey:title] count] / 2;
+    return [[self.sections objectForKey:title] count] / 3;
 }
 
 

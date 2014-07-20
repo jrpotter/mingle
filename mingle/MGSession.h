@@ -15,9 +15,9 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    MINGLE,
-    FACEBOOK,
-    TWITTER
+    MINGLE_TYPE,
+    FACEBOOK_TYPE,
+    TWITTER_TYPE
 } LOGIN_TYPE;
 
 @interface MGSession : NSObject

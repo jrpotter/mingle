@@ -83,12 +83,12 @@
 - (void)presentPostLoginViewController
 {
     UIViewController *next = nil;
+    NSString *welcome = @"shownWelcome";
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"shown_welcome"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shown_welcome"];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:welcome]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:welcome];
         next = [[MGWelcomeViewController alloc] init];
     } else {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"shown_welcome"];
         next = [[MGRootViewController alloc] init];
     }
     
@@ -98,7 +98,6 @@
                     animations:^{ self.window.rootViewController = next; }
                     completion:nil];
 }
-
 
 
 @end

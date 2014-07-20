@@ -12,7 +12,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGSpringboardViewControllerDelegate.h"
 
 @interface MGSpringboardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property (weak, nonatomic) NSObject<MGSpringboardViewControllerDelegate> *delegate;
 @end

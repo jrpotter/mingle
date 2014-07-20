@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGSpringboardViewControllerDelegate.h"
 
-@interface MGRootViewController : UIViewController
+@interface MGRootViewController : UIViewController <MGSpringboardViewControllerDelegate>
 
 @end

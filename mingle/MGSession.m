@@ -60,9 +60,9 @@ static NSString *typeKey = @"type";
 - (NSString *)getLoginType:(LOGIN_TYPE)type
 {
     switch(type) {
-        case MINGLE: return @"mingle";
-        case FACEBOOK: return @"facebook";
-        case TWITTER: return @"twitter";
+        case MINGLE_TYPE: return @"mingle";
+        case FACEBOOK_TYPE: return @"facebook";
+        case TWITTER_TYPE: return @"twitter";
     }
 }
 
