@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (UIView_ImageEffects)
+@interface UIView (ImageConvert)
 -(UIImage *)convertViewToImage;
 @end

@@ -31,8 +31,8 @@
         [_facebookLogin setTranslatesAutoresizingMaskIntoConstraints:NO];
         
         _twitterLogin = [[MGIconButtonViewController alloc] initWithTitle:@"Login With Twitter" icon:TWITTER_ICON];
-        [_twitterLogin setFont:[UIFont fontWithName:@"Helvetica" size:15]];
-        [_twitterLogin setPressColor:[UIColor whiteColor]];
+        [_twitterLogin.button setTextFont:[UIFont fontWithName:@"Helvetica" size:15]];
+        [_twitterLogin.button setSelectedTextColor:[UIColor whiteColor]];
         [_twitterLogin.view.layer setCornerRadius:5];
         [_twitterLogin.view setBackgroundColor:TWITTER_COLOR];
         [_twitterLogin.view setTranslatesAutoresizingMaskIntoConstraints:NO];

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 FuzzyKayak. All rights reserved.
 //
 
-#import "UIView+ImageEffects.h"
+#import "UIView+ImageConvert.h"
 
-@implementation UIView (UIView_ImageEffects)
+@implementation UIView (ImageConvert)
 
 -(UIImage *)convertViewToImage
 {

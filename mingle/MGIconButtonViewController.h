@@ -12,9 +12,6 @@
 #import "MGIconButton.h"
 
 @interface MGIconButtonViewController : UIViewController
-@property (strong, nonatomic) UIColor *pressColor;
 @property (strong, nonatomic) MGIconButton *button;
-- (void)setFont:(UIFont *)font;
-- (void)setFontSize:(CGFloat)fontSize;
 - (id)initWithTitle:(NSString *)title icon:(NSString *)icon;
 @end

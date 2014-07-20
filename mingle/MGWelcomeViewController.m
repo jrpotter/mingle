@@ -199,7 +199,7 @@ static NSInteger slideCount = 3;
     UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"jpg"]];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [imageView setContentMode:UIViewContentModeScaleToFill];
     
     // Create controller
     UIViewController *controller = [[UIViewController alloc] init];

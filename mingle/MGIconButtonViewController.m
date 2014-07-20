@@ -9,8 +9,7 @@
 #import "MGIconButtonViewController.h"
 
 @interface MGIconButtonViewController ()
-@property (strong, nonatomic) UILabel *icon;
-@property (strong, nonatomic) UILabel *text;
+
 @end
 
 @implementation MGIconButtonViewController
@@ -21,26 +20,14 @@
 {
     self = [super init];
     if(self) {
-        
-        _pressColor = MINGLE_COLOR;
-        
-        _icon = [[UILabel alloc] init];
-        [_icon setText:icon];
-        [_icon setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_icon setFont:[BUTTON_FONT fontWithSize:25]];
-        [_icon sizeToFit];
-        
-        _text = [[UILabel alloc] init];
-        [_text setText:title];
-        [_text setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_text setFont:[MINGLE_FONT fontWithSize:25]];
-        [_text sizeToFit];
-        
         _button = [[MGIconButton alloc] init];
         [_button setTranslatesAutoresizingMaskIntoConstraints:NO];
         [_button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchDown];
         [_button addTarget:self action:@selector(unchangeColor) forControlEvents:UIControlEventTouchDragExit];
         [_button addTarget:self action:@selector(unchangeColor) forControlEvents:UIControlEventTouchUpInside];
+        
+        [_button.icon setText:icon];
+        [_button.text setText:title];
     }
     
     return self;
@@ -63,8 +50,6 @@
     
     // Build Hierarchy
     [self.view addSubview:self.button];
-    [self.button addSubview:self.icon];
-    [self.button addSubview:self.text];
     
     // Layout
     [self.view addConstraints:[NSLayoutConstraint
@@ -78,33 +63,6 @@
                                options:NSLayoutFormatAlignAllCenterX
                                metrics:nil
                                views:@{@"button": self.button, @"view": self.view}]];
-    
-    [self.button addConstraints:[NSLayoutConstraint
-                                 constraintsWithVisualFormat:@"H:|-15-[icon]-15-[text]"
-                                 options:NSLayoutFormatAlignAllCenterY
-                                 metrics:nil
-                                 views:@{@"icon": self.icon, @"text": self.text}]];
-    
-    for(UILabel *label in @[self.icon, self.text]) {
-        [self.button addConstraints:[NSLayoutConstraint
-                                     constraintsWithVisualFormat:@"V:|-10-[label]-10-|"
-                                     options:NSLayoutFormatAlignAllCenterY
-                                     metrics:nil
-                                     views:@{@"label": label}]];
-    }
-}
-
-#pragma mark - Setters
-
-- (void)setFont:(UIFont *)font
-{
-    [_text setFont:font];
-}
-
-- (void)setFontSize:(CGFloat)fontSize
-{
-    [_icon setFont:[_icon.font fontWithSize:fontSize]];
-    [_text setFont:[_icon.font fontWithSize:fontSize]];
 }
 
 
@@ -112,14 +70,12 @@
 
 - (void)changeColor
 {
-    [self.icon setTextColor:self.pressColor];
-    [self.text setTextColor:self.pressColor];
+    [self.button setSelected:YES];
 }
 
 - (void)unchangeColor
 {
-    [self.icon setTextColor:[UIColor whiteColor]];
-    [self.text setTextColor:[UIColor whiteColor]];
+    [self.button setSelected:NO];
 }
 
 

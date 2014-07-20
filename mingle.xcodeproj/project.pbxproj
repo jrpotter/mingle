@@ -22,13 +22,15 @@
 		210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974CA19797C0300DB2A0F /* MGRootViewController.m */; };
 		210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974DB1979830E00DB2A0F /* MGLoginViewController.m */; };
 		2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127BA4A197B48BA00649946 /* MGSpringboardHeaderViewController.m */; };
+		2157FD11197B7D8500123CEB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */; };
+		2157FD14197B7F1C00123CEB /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */; };
+		2157FD17197B7F3900123CEB /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD16197B7F3900123CEB /* welcome_slide_1.jpg */; };
+		2157FD1D197B82C100123CEB /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD1C197B82C100123CEB /* welcome_slide_0.jpg */; };
 		216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 210974CE1979818300DB2A0F /* Bauhaus93.ttf */; };
 		216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 210974CF1979818300DB2A0F /* Icomoon.ttf */; };
 		2199D824197B50B900222361 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2199D823197B50B900222361 /* UIColor+Hex.m */; };
 		219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AE51979D6A10060480F /* MGPageViewController.m */; };
 		219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AF11979F24E0060480F /* MGWelcomeViewController.m */; };
-		219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF31979F36D0060480F /* welcome_slide_2.jpg */; };
-		219A9AF71979F36D0060480F /* welcome_slide_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 219A9AF41979F36D0060480F /* welcome_slide_0.jpg */; };
 		219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */; };
 		21B2B7BC197B63EA008108F9 /* MGIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B2B7BB197B63EA008108F9 /* MGIconButton.m */; };
 		21B5218D1979A666004BB5AD /* mingle_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B5218C1979A666004BB5AD /* mingle_background.png */; };
@@ -36,13 +38,11 @@
 		21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B521921979C188004BB5AD /* MGLoginLinksViewController.m */; };
 		21E2149B197ACFA7004B16C7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E2149A197ACFA7004B16C7 /* FacebookSDK.framework */; };
 		21E2149F197AD54B004B16C7 /* MGIconButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E2149E197AD54B004B16C7 /* MGIconButtonViewController.m */; };
-		21E214A1197ADC43004B16C7 /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21E214A0197ADC43004B16C7 /* welcome_slide_1.jpg */; };
 		21E214A5197AF4BF004B16C7 /* MGSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214A4197AF4BF004B16C7 /* MGSession.m */; };
 		21E214A8197AF737004B16C7 /* MGConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214A7197AF737004B16C7 /* MGConnection.m */; };
 		21E214AC197B0015004B16C7 /* MGConnectionQueues.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214AB197B0015004B16C7 /* MGConnectionQueues.m */; };
 		21E214B8197B3627004B16C7 /* MGSpringboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214B7197B3627004B16C7 /* MGSpringboardViewController.m */; };
-		21E214BC197B3A5F004B16C7 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214BB197B3A5F004B16C7 /* UIImage+ImageEffects.m */; };
-		21E214BF197B3AB7004B16C7 /* UIView+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214BE197B3AB7004B16C7 /* UIView+ImageEffects.m */; };
+		21E214BF197B3AB7004B16C7 /* UIView+ImageConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214BE197B3AB7004B16C7 /* UIView+ImageConvert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,14 +81,17 @@
 		210974DB1979830E00DB2A0F /* MGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginViewController.m; sourceTree = "<group>"; };
 		2127BA49197B48BA00649946 /* MGSpringboardHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSpringboardHeaderViewController.h; sourceTree = "<group>"; };
 		2127BA4A197B48BA00649946 /* MGSpringboardHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSpringboardHeaderViewController.m; sourceTree = "<group>"; };
+		2157FD0F197B7D8500123CEB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
+		2157FD16197B7F3900123CEB /* welcome_slide_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_1.jpg; sourceTree = "<group>"; };
+		2157FD1C197B82C100123CEB /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
 		2199D822197B50B900222361 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		2199D823197B50B900222361 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		219A9AE41979D6A10060480F /* MGPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPageViewController.h; sourceTree = "<group>"; };
 		219A9AE51979D6A10060480F /* MGPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPageViewController.m; sourceTree = "<group>"; };
 		219A9AF01979F24E0060480F /* MGWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWelcomeViewController.h; sourceTree = "<group>"; };
 		219A9AF11979F24E0060480F /* MGWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWelcomeViewController.m; sourceTree = "<group>"; };
-		219A9AF31979F36D0060480F /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
-		219A9AF41979F36D0060480F /* welcome_slide_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_0.jpg; sourceTree = "<group>"; };
 		219A9AFD1979F9F80060480F /* MGLoginAlternativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginAlternativeViewController.h; sourceTree = "<group>"; };
 		219A9AFE1979F9F80060480F /* MGLoginAlternativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginAlternativeViewController.m; sourceTree = "<group>"; };
 		21B2B7BA197B63EA008108F9 /* MGIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGIconButton.h; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		21E2149A197ACFA7004B16C7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		21E2149D197AD54B004B16C7 /* MGIconButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGIconButtonViewController.h; sourceTree = "<group>"; };
 		21E2149E197AD54B004B16C7 /* MGIconButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGIconButtonViewController.m; sourceTree = "<group>"; };
-		21E214A0197ADC43004B16C7 /* welcome_slide_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = welcome_slide_1.jpg; path = ../../../Downloads/welcome_slide_1.jpg; sourceTree = "<group>"; };
 		21E214A3197AF4BF004B16C7 /* MGSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSession.h; sourceTree = "<group>"; };
 		21E214A4197AF4BF004B16C7 /* MGSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSession.m; sourceTree = "<group>"; };
 		21E214A6197AF737004B16C7 /* MGConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGConnection.h; sourceTree = "<group>"; };
@@ -110,10 +112,8 @@
 		21E214AB197B0015004B16C7 /* MGConnectionQueues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGConnectionQueues.m; sourceTree = "<group>"; };
 		21E214B6197B3627004B16C7 /* MGSpringboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSpringboardViewController.h; sourceTree = "<group>"; };
 		21E214B7197B3627004B16C7 /* MGSpringboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSpringboardViewController.m; sourceTree = "<group>"; };
-		21E214BA197B3A5F004B16C7 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "../../../Downloads/UIImageEffects/UIImageEffects/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		21E214BB197B3A5F004B16C7 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "../../../Downloads/UIImageEffects/UIImageEffects/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		21E214BD197B3AB7004B16C7 /* UIView+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ImageEffects.h"; sourceTree = "<group>"; };
-		21E214BE197B3AB7004B16C7 /* UIView+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ImageEffects.m"; sourceTree = "<group>"; };
+		21E214BD197B3AB7004B16C7 /* UIView+ImageConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ImageConvert.h"; sourceTree = "<group>"; };
+		21E214BE197B3AB7004B16C7 /* UIView+ImageConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ImageConvert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,9 +238,9 @@
 		210974D01979818A00DB2A0F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				219A9AF31979F36D0060480F /* welcome_slide_2.jpg */,
-				219A9AF41979F36D0060480F /* welcome_slide_0.jpg */,
-				21E214A0197ADC43004B16C7 /* welcome_slide_1.jpg */,
+				2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */,
+				2157FD16197B7F3900123CEB /* welcome_slide_1.jpg */,
+				2157FD1C197B82C100123CEB /* welcome_slide_0.jpg */,
 				21B5218C1979A666004BB5AD /* mingle_background.png */,
 			);
 			name = Images;
@@ -333,10 +333,10 @@
 		21E214B9197B3A57004B16C7 /* UIImageEffects */ = {
 			isa = PBXGroup;
 			children = (
-				21E214BA197B3A5F004B16C7 /* UIImage+ImageEffects.h */,
-				21E214BB197B3A5F004B16C7 /* UIImage+ImageEffects.m */,
-				21E214BD197B3AB7004B16C7 /* UIView+ImageEffects.h */,
-				21E214BE197B3AB7004B16C7 /* UIView+ImageEffects.m */,
+				21E214BD197B3AB7004B16C7 /* UIView+ImageConvert.h */,
+				21E214BE197B3AB7004B16C7 /* UIView+ImageConvert.m */,
+				2157FD0F197B7D8500123CEB /* UIImage+ImageEffects.h */,
+				2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */,
 			);
 			name = UIImageEffects;
 			sourceTree = "<group>";
@@ -419,12 +419,12 @@
 			files = (
 				216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */,
 				216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */,
-				219A9AF71979F36D0060480F /* welcome_slide_0.jpg in Resources */,
-				219A9AF61979F36D0060480F /* welcome_slide_2.jpg in Resources */,
 				210974A519797BCA00DB2A0F /* InfoPlist.strings in Resources */,
-				21E214A1197ADC43004B16C7 /* welcome_slide_1.jpg in Resources */,
 				210974AD19797BCA00DB2A0F /* Images.xcassets in Resources */,
 				21B5218D1979A666004BB5AD /* mingle_background.png in Resources */,
+				2157FD1D197B82C100123CEB /* welcome_slide_0.jpg in Resources */,
+				2157FD17197B7F3900123CEB /* welcome_slide_1.jpg in Resources */,
+				2157FD14197B7F1C00123CEB /* welcome_slide_2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,15 +451,15 @@
 				2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */,
 				210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */,
 				219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */,
-				21E214BF197B3AB7004B16C7 /* UIView+ImageEffects.m in Sources */,
+				21E214BF197B3AB7004B16C7 /* UIView+ImageConvert.m in Sources */,
 				219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */,
 				210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */,
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,
 				2199D824197B50B900222361 /* UIColor+Hex.m in Sources */,
-				21E214BC197B3A5F004B16C7 /* UIImage+ImageEffects.m in Sources */,
 				21E214A5197AF4BF004B16C7 /* MGSession.m in Sources */,
+				2157FD11197B7D8500123CEB /* UIImage+ImageEffects.m in Sources */,
 				21E2149F197AD54B004B16C7 /* MGIconButtonViewController.m in Sources */,
 				21E214AC197B0015004B16C7 /* MGConnectionQueues.m in Sources */,
 			);

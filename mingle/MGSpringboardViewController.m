@@ -104,7 +104,7 @@ static NSString *aboutTitle = @"About";
     
     // Layout Vertically
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:|-20-[header]-6-[table]-0-|"
+                               constraintsWithVisualFormat:@"V:|-0-[header]-6-[table]-0-|"
                                options:NSLayoutFormatAlignAllCenterX
                                metrics:nil
                                views:@{@"header": self.header.view, @"table": self.tableView}]];
@@ -135,31 +135,30 @@ static NSString *aboutTitle = @"About";
     NSString *icon = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 2 + 1];
     
     // Create new button
-    MGIconButtonViewController *button = [[MGIconButtonViewController alloc] initWithTitle:label icon:icon];
-    [button.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [button setFont:[UIFont fontWithName:@"Helvetica" size:20]];
-    [button setFontSize:20];
+    MGIconButtonViewController *controller = [[MGIconButtonViewController alloc] initWithTitle:label icon:icon];
+    [controller.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [controller.button setTextFont:[UIFont fontWithName:@"Helvetica" size:20]];
     
     // Propagate event to table view
-    [button.button setIdentifier:indexPath];
-    [button.button addTarget:self action:@selector(selectedRow:) forControlEvents:UIControlEventTouchUpInside];
+    [controller.button setIdentifier:indexPath];
+    [controller.button addTarget:self action:@selector(selectedRow:) forControlEvents:UIControlEventTouchUpInside];
     
     // Build Hierarchy
-    [self addChildViewController:button];
-    [cell.contentView addSubview:button.view];
+    [self addChildViewController:controller];
+    [cell.contentView addSubview:controller.view];
     
     // Layout
     [cell.contentView addConstraints:[NSLayoutConstraint
                                       constraintsWithVisualFormat:@"H:|-0-[button(==cell)]-0-|"
                                       options:NSLayoutFormatAlignAllCenterY
                                       metrics:nil
-                                      views:@{@"button": button.view, @"cell": cell.contentView}]];
+                                      views:@{@"button": controller.view, @"cell": cell.contentView}]];
     
     [cell.contentView addConstraints:[NSLayoutConstraint
                                       constraintsWithVisualFormat:@"V:|-0-[button(==cell)]-0-|"
                                       options:NSLayoutFormatAlignAllCenterX
                                       metrics:nil
-                                      views:@{@"button": button.view, @"cell": cell.contentView}]];
+                                      views:@{@"button": controller.view, @"cell": cell.contentView}]];
     
     [cell setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.25]];
     
@@ -169,9 +168,13 @@ static NSString *aboutTitle = @"About";
 - (void)selectedRow:(id)sender
 {
     static MGIconButton *last = nil;
-    if(last) [last setBackgroundColor:[UIColor clearColor]];
+    if(last) {
+        [last setSelected:NO];
+        [last setBackgroundColor:[UIColor clearColor]];
+    }
     
     last = (MGIconButton *)sender;
+    [last setSelected:YES];
     [last setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.35]];
     [self.tableView scrollToRowAtIndexPath:last.identifier atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 }
