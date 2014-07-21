@@ -35,20 +35,22 @@ static NSString *typeKey = @"type";
 
 - (void)logout
 {
-    MGAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    [appDelegate presentLoginViewController];
-    [self clearCredentials];
+    [MGSession deleteValueForKey:typeKey];
+    [MGSession deleteValueForKey:emailKey];
+    [MGSession deleteValueForKey:passwordKey];
 }
 
+// During the login, we save any data related to the user, as well as their credentials so they
+// do not have to repeatedly enter their login information
 - (void)login:(NSDictionary *)entries complete:(void (^)(NSDictionary *response, NSError *error))complete;
 {
     [MGConnection sendOpenRequest:MINGLE_LOGIN_URL data:entries complete:^(NSDictionary *response, NSError *error) {
-        complete(response, error);
-        if(error == nil && [[response objectForKey:@"code"] intValue] == 0) {
+        if(error == nil && [response[@"code"] intValue] == 0) {
             [self saveCredentials:entries];
-            MGAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-            [appDelegate presentPostLoginViewController];
+            [[MGSession instance] setUserData:response[@"user_data"]];
         }
+        
+        complete(response, error);
     }];
 }
 
@@ -69,7 +71,7 @@ static NSString *typeKey = @"type";
 
 #pragma mark - Credentials
 
-- (NSDictionary *)getCredentials
+- (NSDictionary *)credentials
 {
     return @{
         typeKey: [MGSession loadValueForKey:typeKey],
@@ -80,16 +82,9 @@ static NSString *typeKey = @"type";
 
 - (void)saveCredentials:(NSDictionary *)credentials
 {
-    [MGSession saveValue:[credentials objectForKey:typeKey] forKey:typeKey];
-    [MGSession saveValue:[credentials objectForKey:emailKey] forKey:emailKey];
-    [MGSession saveValue:[credentials objectForKey:passwordKey] forKey:passwordKey];
-}
-
-- (void)clearCredentials
-{
-    [MGSession deleteValueForKey:typeKey];
-    [MGSession deleteValueForKey:emailKey];
-    [MGSession deleteValueForKey:passwordKey];
+    [MGSession saveValue:credentials[typeKey] forKey:typeKey];
+    [MGSession saveValue:credentials[emailKey] forKey:emailKey];
+    [MGSession saveValue:credentials[passwordKey] forKey:passwordKey];
 }
 
 

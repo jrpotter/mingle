@@ -22,6 +22,15 @@
 		210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974CA19797C0300DB2A0F /* MGRootViewController.m */; };
 		210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974DB1979830E00DB2A0F /* MGLoginViewController.m */; };
 		2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127BA4A197B48BA00649946 /* MGSpringboardHeaderViewController.m */; };
+		2155389C197C0B0D001CA5C7 /* default_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2155389B197C0B0D001CA5C7 /* default_profile.png */; };
+		2155389F197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2155389E197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m */; };
+		215538A2197C3405001CA5C7 /* MGProfileImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538A1197C3405001CA5C7 /* MGProfileImageViewController.m */; };
+		215538A5197C4506001CA5C7 /* MGProfileActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538A4197C4506001CA5C7 /* MGProfileActivityViewController.m */; };
+		215538A7197C5403001CA5C7 /* Walkway_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215538A6197C5395001CA5C7 /* Walkway_Black.ttf */; };
+		215538AD197C986E001CA5C7 /* MGFriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */; };
+		215538B1197C9B73001CA5C7 /* MGImagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */; };
+		215538B4197C9BB3001CA5C7 /* MGNavigationPushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */; };
+		215538B8197CA1DB001CA5C7 /* MGEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B7197CA1DB001CA5C7 /* MGEventsViewController.m */; };
 		2157FD11197B7D8500123CEB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */; };
 		2157FD14197B7F1C00123CEB /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */; };
 		2157FD17197B7F3900123CEB /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD16197B7F3900123CEB /* welcome_slide_1.jpg */; };
@@ -29,7 +38,6 @@
 		2157FD22197B846F00123CEB /* MGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FD21197B846F00123CEB /* MGNavigationViewController.m */; };
 		2157FD25197B869300123CEB /* MGProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FD24197B869300123CEB /* MGProfileViewController.m */; };
 		216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 210974CE1979818300DB2A0F /* Bauhaus93.ttf */; };
-		216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 210974CF1979818300DB2A0F /* Icomoon.ttf */; };
 		2199D824197B50B900222361 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2199D823197B50B900222361 /* UIColor+Hex.m */; };
 		219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AE51979D6A10060480F /* MGPageViewController.m */; };
 		219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219A9AF11979F24E0060480F /* MGWelcomeViewController.m */; };
@@ -44,7 +52,7 @@
 		21E214A8197AF737004B16C7 /* MGConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214A7197AF737004B16C7 /* MGConnection.m */; };
 		21E214AC197B0015004B16C7 /* MGConnectionQueues.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214AB197B0015004B16C7 /* MGConnectionQueues.m */; };
 		21E214B8197B3627004B16C7 /* MGSpringboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214B7197B3627004B16C7 /* MGSpringboardViewController.m */; };
-		21E214BF197B3AB7004B16C7 /* UIView+ImageConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214BE197B3AB7004B16C7 /* UIView+ImageConvert.m */; };
+		21E214BF197B3AB7004B16C7 /* UIView+ViewEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214BE197B3AB7004B16C7 /* UIView+ViewEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +86,27 @@
 		210974CA19797C0300DB2A0F /* MGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRootViewController.m; sourceTree = "<group>"; };
 		210974CC197980F500DB2A0F /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		210974CE1979818300DB2A0F /* Bauhaus93.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus93.ttf; sourceTree = "<group>"; };
-		210974CF1979818300DB2A0F /* Icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Icomoon.ttf; sourceTree = "<group>"; };
 		210974DA1979830E00DB2A0F /* MGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginViewController.h; sourceTree = "<group>"; };
 		210974DB1979830E00DB2A0F /* MGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginViewController.m; sourceTree = "<group>"; };
 		2127BA49197B48BA00649946 /* MGSpringboardHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSpringboardHeaderViewController.h; sourceTree = "<group>"; };
 		2127BA4A197B48BA00649946 /* MGSpringboardHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSpringboardHeaderViewController.m; sourceTree = "<group>"; };
+		2155389B197C0B0D001CA5C7 /* default_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_profile.png; sourceTree = "<group>"; };
+		2155389D197C2F7C001CA5C7 /* MGProfilePictureEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfilePictureEditViewController.h; sourceTree = "<group>"; };
+		2155389E197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfilePictureEditViewController.m; sourceTree = "<group>"; };
+		215538A0197C3405001CA5C7 /* MGProfileImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfileImageViewController.h; sourceTree = "<group>"; };
+		215538A1197C3405001CA5C7 /* MGProfileImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfileImageViewController.m; sourceTree = "<group>"; };
+		215538A3197C4506001CA5C7 /* MGProfileActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfileActivityViewController.h; sourceTree = "<group>"; };
+		215538A4197C4506001CA5C7 /* MGProfileActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfileActivityViewController.m; sourceTree = "<group>"; };
+		215538A6197C5395001CA5C7 /* Walkway_Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Walkway_Black.ttf; sourceTree = "<group>"; };
+		215538AB197C986E001CA5C7 /* MGFriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFriendsListViewController.h; sourceTree = "<group>"; };
+		215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFriendsListViewController.m; sourceTree = "<group>"; };
+		215538AF197C9B73001CA5C7 /* MGImagesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImagesListViewController.h; sourceTree = "<group>"; };
+		215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGImagesListViewController.m; sourceTree = "<group>"; };
+		215538B2197C9BB3001CA5C7 /* MGNavigationPushedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNavigationPushedViewController.h; sourceTree = "<group>"; };
+		215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNavigationPushedViewController.m; sourceTree = "<group>"; };
+		215538B6197CA1DB001CA5C7 /* MGEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGEventsViewController.h; sourceTree = "<group>"; };
+		215538B7197CA1DB001CA5C7 /* MGEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGEventsViewController.m; sourceTree = "<group>"; };
+		215538B9197CAD4F001CA5C7 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		2157FD0F197B7D8500123CEB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
@@ -119,8 +143,8 @@
 		21E214AB197B0015004B16C7 /* MGConnectionQueues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGConnectionQueues.m; sourceTree = "<group>"; };
 		21E214B6197B3627004B16C7 /* MGSpringboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSpringboardViewController.h; sourceTree = "<group>"; };
 		21E214B7197B3627004B16C7 /* MGSpringboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSpringboardViewController.m; sourceTree = "<group>"; };
-		21E214BD197B3AB7004B16C7 /* UIView+ImageConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ImageConvert.h"; sourceTree = "<group>"; };
-		21E214BE197B3AB7004B16C7 /* UIView+ImageConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ImageConvert.m"; sourceTree = "<group>"; };
+		21E214BD197B3AB7004B16C7 /* UIView+ViewEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewEffects.h"; sourceTree = "<group>"; };
+		21E214BE197B3AB7004B16C7 /* UIView+ViewEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,15 +207,17 @@
 			isa = PBXGroup;
 			children = (
 				21E2149C197AD53A004B16C7 /* Buttons */,
+				2155389A197C011F001CA5C7 /* Categories */,
 				21E214A9197B0003004B16C7 /* Connection */,
+				215538B5197CA142001CA5C7 /* Events */,
+				215538AA197C985E001CA5C7 /* Friends */,
+				215538AE197C9B62001CA5C7 /* Images */,
 				210974D9197982DC00DB2A0F /* Login */,
 				2157FD1F197B845A00123CEB /* Navigation */,
 				219A9AE31979D68A0060480F /* Pages */,
 				2157FD1E197B844700123CEB /* Profile */,
 				21E214A2197AF48F004B16C7 /* Session */,
 				21E214B5197B3612004B16C7 /* Springboard */,
-				2199D821197B509900222361 /* UIColors */,
-				21E214B9197B3A57004B16C7 /* UIImageEffects */,
 				219A9AE21979D5170060480F /* Welcome */,
 				210974A919797BCA00DB2A0F /* MGAppDelegate.h */,
 				210974AA19797BCA00DB2A0F /* MGAppDelegate.m */,
@@ -238,8 +264,9 @@
 		210974CD1979816B00DB2A0F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				215538A6197C5395001CA5C7 /* Walkway_Black.ttf */,
+				215538B9197CAD4F001CA5C7 /* icomoon.ttf */,
 				210974CE1979818300DB2A0F /* Bauhaus93.ttf */,
-				210974CF1979818300DB2A0F /* Icomoon.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -247,6 +274,7 @@
 		210974D01979818A00DB2A0F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2155389B197C0B0D001CA5C7 /* default_profile.png */,
 				2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */,
 				2157FD16197B7F3900123CEB /* welcome_slide_1.jpg */,
 				2157FD1C197B82C100123CEB /* welcome_slide_0.jpg */,
@@ -270,11 +298,57 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		2155389A197C011F001CA5C7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2199D822197B50B900222361 /* UIColor+Hex.h */,
+				2199D823197B50B900222361 /* UIColor+Hex.m */,
+				21E214BD197B3AB7004B16C7 /* UIView+ViewEffects.h */,
+				21E214BE197B3AB7004B16C7 /* UIView+ViewEffects.m */,
+				2157FD0F197B7D8500123CEB /* UIImage+ImageEffects.h */,
+				2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		215538AA197C985E001CA5C7 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				215538AB197C986E001CA5C7 /* MGFriendsListViewController.h */,
+				215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
+		215538AE197C9B62001CA5C7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				215538AF197C9B73001CA5C7 /* MGImagesListViewController.h */,
+				215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		215538B5197CA142001CA5C7 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				215538B6197CA1DB001CA5C7 /* MGEventsViewController.h */,
+				215538B7197CA1DB001CA5C7 /* MGEventsViewController.m */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		2157FD1E197B844700123CEB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				2157FD23197B869300123CEB /* MGProfileViewController.h */,
 				2157FD24197B869300123CEB /* MGProfileViewController.m */,
+				215538A0197C3405001CA5C7 /* MGProfileImageViewController.h */,
+				215538A1197C3405001CA5C7 /* MGProfileImageViewController.m */,
+				2155389D197C2F7C001CA5C7 /* MGProfilePictureEditViewController.h */,
+				2155389E197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m */,
+				215538A3197C4506001CA5C7 /* MGProfileActivityViewController.h */,
+				215538A4197C4506001CA5C7 /* MGProfileActivityViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -284,17 +358,10 @@
 			children = (
 				2157FD20197B846F00123CEB /* MGNavigationViewController.h */,
 				2157FD21197B846F00123CEB /* MGNavigationViewController.m */,
+				215538B2197C9BB3001CA5C7 /* MGNavigationPushedViewController.h */,
+				215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */,
 			);
 			name = Navigation;
-			sourceTree = "<group>";
-		};
-		2199D821197B509900222361 /* UIColors */ = {
-			isa = PBXGroup;
-			children = (
-				2199D822197B50B900222361 /* UIColor+Hex.h */,
-				2199D823197B50B900222361 /* UIColor+Hex.m */,
-			);
-			name = UIColors;
 			sourceTree = "<group>";
 		};
 		219A9AE21979D5170060480F /* Welcome */ = {
@@ -356,17 +423,6 @@
 				2157FD26197B8A0800123CEB /* MGSpringboardViewControllerDelegate.h */,
 			);
 			name = Springboard;
-			sourceTree = "<group>";
-		};
-		21E214B9197B3A57004B16C7 /* UIImageEffects */ = {
-			isa = PBXGroup;
-			children = (
-				21E214BD197B3AB7004B16C7 /* UIView+ImageConvert.h */,
-				21E214BE197B3AB7004B16C7 /* UIView+ImageConvert.m */,
-				2157FD0F197B7D8500123CEB /* UIImage+ImageEffects.h */,
-				2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */,
-			);
-			name = UIImageEffects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,13 +501,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215538A7197C5403001CA5C7 /* Walkway_Black.ttf in Resources */,
 				216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */,
-				216AA1FC1979CBF700791F14 /* Icomoon.ttf in Resources */,
 				210974A519797BCA00DB2A0F /* InfoPlist.strings in Resources */,
 				210974AD19797BCA00DB2A0F /* Images.xcassets in Resources */,
 				21B5218D1979A666004BB5AD /* mingle_background.png in Resources */,
 				2157FD1D197B82C100123CEB /* welcome_slide_0.jpg in Resources */,
 				2157FD17197B7F3900123CEB /* welcome_slide_1.jpg in Resources */,
+				2155389C197C0B0D001CA5C7 /* default_profile.png in Resources */,
 				2157FD14197B7F1C00123CEB /* welcome_slide_2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,18 +530,25 @@
 			files = (
 				21B2B7BC197B63EA008108F9 /* MGIconButton.m in Sources */,
 				210974AB19797BCA00DB2A0F /* MGAppDelegate.m in Sources */,
+				215538B4197C9BB3001CA5C7 /* MGNavigationPushedViewController.m in Sources */,
 				21E214A8197AF737004B16C7 /* MGConnection.m in Sources */,
+				2155389F197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m in Sources */,
 				21E214B8197B3627004B16C7 /* MGSpringboardViewController.m in Sources */,
 				219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */,
+				215538B8197CA1DB001CA5C7 /* MGEventsViewController.m in Sources */,
 				2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */,
+				215538A2197C3405001CA5C7 /* MGProfileImageViewController.m in Sources */,
 				210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */,
 				219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */,
-				21E214BF197B3AB7004B16C7 /* UIView+ImageConvert.m in Sources */,
+				21E214BF197B3AB7004B16C7 /* UIView+ViewEffects.m in Sources */,
 				219A9AFF1979F9F80060480F /* MGLoginAlternativeViewController.m in Sources */,
+				215538AD197C986E001CA5C7 /* MGFriendsListViewController.m in Sources */,
 				2157FD22197B846F00123CEB /* MGNavigationViewController.m in Sources */,
 				210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */,
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
+				215538A5197C4506001CA5C7 /* MGProfileActivityViewController.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
+				215538B1197C9B73001CA5C7 /* MGImagesListViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,
 				2157FD25197B869300123CEB /* MGProfileViewController.m in Sources */,
 				2199D824197B50B900222361 /* UIColor+Hex.m in Sources */,

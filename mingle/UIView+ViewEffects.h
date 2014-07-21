@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (ImageConvert)
+@interface UIView (ViewEffects)
 -(UIImage *)convertViewToImage;
++ (UIView *)addLoadingOverlay;
++ (UIView *)addLoadingOverlay:(UIView *)targetView;
 @end

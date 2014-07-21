@@ -24,11 +24,13 @@ typedef enum {
 
 + (id)instance;
 
+@property (strong, nonatomic) NSDictionary *userData;
+
 - (BOOL)getLoginStatus;
 - (NSString *)getLoginType:(LOGIN_TYPE)type;
 
 - (void)logout;
-- (NSDictionary *)getCredentials;
+- (NSDictionary *)credentials;
 - (void)login:(NSDictionary *)entries complete:(void (^)(NSDictionary *response, NSError *error))complete;
 
 @end

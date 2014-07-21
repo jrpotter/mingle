@@ -20,8 +20,14 @@
 // Fonts
 #define MINGLE_FONT                         [UIFont fontWithName:@"Bauhaus 93" size:20]
 #define BUTTON_FONT                         [UIFont fontWithName:@"icomoon" size:20]
+#define NUMBER_FONT                         [UIFont fontWithName:@"Walkway Black" size:20]
+
+// Images
+#define BACKGROUND_IMAGE                    [UIImage imageNamed:@"mingle_background.png"]
+#define EMPTY_PROFILE_IMAGE                 [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default_profile" ofType:@"png"]]
 
 // URLS
+#define MINGLE_ROOT_URL                     @"https://mingle-fuzzykayak.rhcloud.com/"
 #define MINGLE_STATIC_URL                   @"https://mingle-fuzzykayak.rhcloud.com/static/"
 #define MINGLE_ALIAS_CREATE_URL             @"https://mingle-fuzzykayak.rhcloud.com/alias/create/"
 #define MINGLE_ALIAS_FORGOT_PASSWORD        @"https://mingle-fuzzykayak.rhcloud.com/alias/recover/"
@@ -34,13 +40,17 @@
 
 // Icons
 #define ABOUT_ICON                          @"\ue6f7"
+#define BACK_ICON                           @"\ue666"
 #define BROWSE_ICON                         @"\ue6c2"
+#define CAMERA_ICON                         @"\ue60f"
+#define CHECKMARK_ICON                      @"\ue6fe"
 #define CREATE_ICON                         @"\ue702"
 #define CLOSE_ICON                          @"\ue6fa"
 #define CONFIRM_ICON                        @"\ue6fb"
-#define EVENT_ICON                          @"\ue604"
-#define FEATURED_ICON                       @"\ue604"
-#define FRIENDS_ICON                        @"\ue671"
+#define CROP_ICON                           @"\ue73d"
+#define EDIT_ICON                           @"\ue605"
+#define EVENT_ICON                          @"\ue642"
+#define FRIENDS_ICON                        @"\ue63e"
 #define INVITE_ICON                         @"\ue75e"
 #define LOGOUT_ION                          @"\ue704"
 #define MAP_ICON                            @"\ue642"

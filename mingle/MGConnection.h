@@ -23,4 +23,7 @@
 // The following sends out a form (POSTed) to the passed URL
 + (void)sendRequest:(NSString *)url data:(NSDictionary *)data complete:(void (^)(NSDictionary *response, NSError *error))complete;
 + (void)sendOpenRequest:(NSString *)url data:(NSDictionary *)data complete:(void (^)(NSDictionary *response, NSError *error))complete;
+
+// Error Checking And Handling
++ (NSString *)responseErrorString:(NSDictionary *)response error:(NSError *)error;
 @end

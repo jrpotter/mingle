@@ -3,8 +3,8 @@
 //
 //  The springboard is the main means of navigating throughout the application.
 //  The current setup is as follows:
-//    - Events: Featured, Browse, Create, Search, Settings
-//    - Account: Profile, Friends, Invite, Logout
+//    - Events: Browse, Create, Search, Settings
+//    - Account: Profile, Invite, Logout
 //    - About: About
 //
 //  Created by UNC ResNET on 7/19/14.

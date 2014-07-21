@@ -9,9 +9,13 @@
 #import "MGRootViewController.h"
 #import "MGNavigationViewController.h"
 #import "MGSpringboardViewController.h"
+#import "MGEventsViewController.h"
 #import "MGProfileViewController.h"
+#import "MGAppDelegate.h"
+#import "MGSession.h"
 
 @interface MGRootViewController ()
+@property (strong, nonatomic) NSMutableArray *branches;
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIViewController *viewport;
 @property (strong, nonatomic) MGNavigationViewController *handle;
@@ -37,13 +41,21 @@
         [_scrollView setShowsVerticalScrollIndicator:NO];
         [_scrollView setShowsHorizontalScrollIndicator:NO];
         [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_scrollView setBackgroundColor:[UIColor colorWithPatternImage:BACKGROUND_IMAGE]];
         
         _viewport = [[UIViewController alloc] init];
         [_viewport.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_viewport.view setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5]];
         
         _springboard = [[MGSpringboardViewController alloc] init];
         [_springboard setDelegate:self];
         [_springboard.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
+        // Attempt to cache the branches we open
+        _branches = [[NSMutableArray alloc] initWithCapacity:BRANCH_COUNT-1];
+        for(NSUInteger i = 0; i < BRANCH_COUNT; i++) {
+            [_branches addObject:[NSNull null]];
+        }
         
     }
     
@@ -127,30 +139,14 @@
                                      options:NSLayoutFormatAlignAllCenterY
                                      metrics:nil
                                      views:views]];
-    
-    // Setup Display
-    [self replaceViewport:[[MGProfileViewController alloc] init]];
 }
 
 
 #pragma mark - Scrolling
 
-- (void)enableViewport:(BOOL)enable
-{
-    if(enable) {
-        [self.handle.viewport setAlpha:1.0];
-        [self.handle.viewport setUserInteractionEnabled:YES];
-        [self.handle.viewport setBackgroundColor:[UIColor whiteColor]];
-    } else {
-        [self.handle.viewport setAlpha:0.3];
-        [self.handle.viewport setUserInteractionEnabled:NO];
-        [self.handle.viewport setBackgroundColor:[UIColor grayColor]];
-    }
-}
-
 - (void)scrollToSpringboard:(BOOL)animated
 {
-    [self enableViewport:NO];
+    [self.handle.viewport setUserInteractionEnabled:NO];
     [self.scrollView setContentOffset:self.springboard.view.frame.origin animated:animated];
 }
 
@@ -165,7 +161,7 @@
 
 - (void)scrollToViewport:(BOOL)animated
 {
-    [self enableViewport:YES];
+    [self.handle.viewport setUserInteractionEnabled:YES];
     [self.scrollView setContentOffset:self.viewport.view.frame.origin animated:animated];
 }
 
@@ -201,26 +197,73 @@
                                         metrics:nil
                                         views:@{@"handle": self.handle.view, @"view": self.viewport.view}]];
     
-    
+    // Return back
+    [self scrollToViewport:YES];
 }
 
 - (void)selectedBranch:(BRANCH)branch
 {
+    if([self.branches objectAtIndex:branch] != [NSNull null]) {
+        [self replaceViewport:[self.branches objectAtIndex:branch]];
+        return;
+    }
+    
+    MGNavigationViewController *controller = nil;
+    MGAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
     switch(branch) {
-        case FEATURED_BRANCH:
+            
         case BROWSE_BRANCH:
+            controller = [[MGEventsViewController alloc] init];
+            break;
+            
         case CREATE_BRANCH:
+            break;
+            
         case SEARCH_BRANCH:
+            break;
+            
         case SETTINGS_BRANCH:
+            break;
+            
         case PROFILE_BRANCH:
-        case FRIENDS_BRANCH:
+            controller = [[MGProfileViewController alloc] initWithUserData:[[MGSession instance] userData]];
+            break;
+            
         case INVITE_BRANCH:
+            break;
+            
         case LOGOUT_BRANCH:
+            [[MGSession instance] logout];
+            [appDelegate presentLoginViewController:YES];
+            break;
+            
         case ABOUT_BRANCH:
+            break;
+            
+        default:
             break;
     }
     
-    [self scrollToViewport:YES];
+    if(controller != nil) {
+        [controller.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.branches setObject:controller atIndexedSubscript:branch];
+        [self replaceViewport:controller];
+    }
+}
+
+
+#pragma mark - Memory
+
+- (void)didReceiveMemoryWarning
+{
+    // Wipe out non active controllers
+    for(NSUInteger i = 0; i < BRANCH_COUNT; i++) {
+        MGNavigationViewController *controller = [self.branches objectAtIndex:i];
+        if(controller != self.handle) {
+            [self.branches setObject:[NSNull null] atIndexedSubscript:i];
+        }
+    }
 }
 
 

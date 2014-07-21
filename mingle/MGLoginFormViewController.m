@@ -7,7 +7,10 @@
 //
 
 #import "MGLoginFormViewController.h"
+#import "MGAppDelegate.h"
+#import "MGConnection.h"
 #import "MGSession.h"
+#import "UIView+ViewEffects.h"
 
 @interface MGLoginFormViewController ()
 
@@ -182,57 +185,6 @@
     return YES;
 }
 
-// Show that work is being done
-// Add a spinner and overlay that will be removed once the login is complete
-- (UIView *)addOverlay
-{
-    UIView *overlay = [[UIView alloc] init];
-    [overlay setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [overlay setBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:0.6]];
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [spinner setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [spinner startAnimating];
-    
-    UIView *window = [[UIApplication sharedApplication] delegate].window;
-    [window addSubview:overlay];
-    [overlay addSubview:spinner];
-    
-    // Add Constraints (Spinner)
-    [overlay addConstraint:[NSLayoutConstraint
-                            constraintWithItem:spinner
-                            attribute:NSLayoutAttributeCenterX
-                            relatedBy:NSLayoutRelationEqual
-                            toItem:overlay
-                            attribute:NSLayoutAttributeCenterX
-                            multiplier:1.0
-                            constant:0]];
-    
-    [overlay addConstraint:[NSLayoutConstraint
-                            constraintWithItem:spinner
-                            attribute:NSLayoutAttributeCenterY
-                            relatedBy:NSLayoutRelationEqual
-                            toItem:overlay
-                            attribute:NSLayoutAttributeCenterY
-                            multiplier:1.0
-                            constant:0]];
-    
-    // Add Constraints (Overlay)
-    [window addConstraints:[NSLayoutConstraint
-                            constraintsWithVisualFormat:@"H:|-0-[overlay(==view)]-0-|"
-                            options:NSLayoutFormatAlignAllCenterY
-                            metrics:nil
-                            views:@{@"overlay": overlay, @"view": window}]];
-    
-    [window addConstraints:[NSLayoutConstraint
-                            constraintsWithVisualFormat:@"V:|-0-[overlay(==view)]-0-|"
-                            options:NSLayoutFormatAlignAllCenterX
-                            metrics:nil
-                            views:@{@"overlay": overlay, @"view": window}]];
-    
-    return overlay;
-}
-
 - (void)submitForm
 {
     // Check to see if the email looks ok
@@ -248,35 +200,20 @@
         [data setObject:[[MGSession instance] getLoginType:MINGLE_TYPE] forKey:@"type"];
         
         // Perform post login attempt logic
-        UIView *overlay = [self addOverlay];
+        UIView *overlay = [UIView addLoadingOverlay];
         [[MGSession instance] login:data complete:^(NSDictionary *response, NSError *error) {
-            
             [overlay removeFromSuperview];
-            
-            NSString *errorMessage = nil;
-            
-            // Represents an error with connection
-            if(error != nil) {
-                errorMessage = error.description;
-                
-            // Could not get a valid response
-            } else if([response objectForKey:@"code"] == nil) {
-                errorMessage = @"Invalid Response";
-                
-            // Represents an internal error (e.g. invalid credentials)
-            } else if([[response objectForKey:@"code"] intValue] != 0) {
-                errorMessage = [response objectForKey:@"error"];
+            NSString *message = [MGConnection responseErrorString:response error:error];
+            if(message == nil) {
+                MGAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+                [appDelegate presentPostLoginViewController:YES];
+            } else {
+                [[[UIAlertView alloc] initWithTitle:@"Error"
+                                            message:message
+                                           delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil] show];
             }
-            
-            if(errorMessage != nil) {
-                [[[UIAlertView alloc]
-                  initWithTitle:@"Error"
-                  message:errorMessage
-                  delegate:nil
-                  cancelButtonTitle:@"OK"
-                  otherButtonTitles:nil] show];
-            }
-            
         }];
         
     }

@@ -82,7 +82,7 @@ static NSInteger slideCount = 3;
 - (void)postLogin
 {
     MGAppDelegate *appDelegate = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate presentPostLoginViewController];
+    [appDelegate presentPostLoginViewController:YES];
 }
 
 

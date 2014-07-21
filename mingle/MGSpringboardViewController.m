@@ -46,18 +46,14 @@ static NSString *aboutTitle = @"About";
         
         // Layout the section titles, row icons, and row branch enumeration
         _sectionTitles = @[eventTitle, accountTitle, aboutTitle];
-        _sections = @{eventTitle:   @[@"Featured", FEATURED_ICON, [[NSNumber alloc] initWithInt:FEATURED_BRANCH],
-                                      @"Browse",   BROWSE_ICON,   [[NSNumber alloc] initWithInt:BROWSE_BRANCH],
+        _sections = @{eventTitle:   @[@"Browse",   BROWSE_ICON,   [[NSNumber alloc] initWithInt:BROWSE_BRANCH],
                                       @"Create",   CREATE_ICON,   [[NSNumber alloc] initWithInt:CREATE_BRANCH],
                                       @"Search",   SEARCH_ICON,   [[NSNumber alloc] initWithInt:SEARCH_BRANCH],
                                       @"Settings", SETTINGS_ICON, [[NSNumber alloc] initWithInt:SETTINGS_BRANCH]],
                       accountTitle: @[@"Profile",  PROFILE_ICON,  [[NSNumber alloc] initWithInt:PROFILE_BRANCH],
-                                      @"Friends",  FRIENDS_ICON,  [[NSNumber alloc] initWithInt:FRIENDS_BRANCH],
                                       @"Invite",   INVITE_ICON,   [[NSNumber alloc] initWithInt:INVITE_BRANCH],
                                       @"Logout",   LOGOUT_ION,    [[NSNumber alloc] initWithInt:LOGOUT_BRANCH]],
                       aboutTitle:   @[@"About",    ABOUT_ICON,    [[NSNumber alloc] initWithInt:ABOUT_BRANCH]]};
-        
-        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mingle_background.png"]]];
     }
     
     return self;
@@ -71,6 +67,24 @@ static NSString *aboutTitle = @"About";
 
 
 #pragma mark - View
+
+// Default Branch (select the first branch)
+// We loop through the subviews of the cell in question and trigger
+// a selected call.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
+    for(UIView *view in cell.contentView.subviews) {
+        for(UIView *subview in view.subviews) {
+            if([subview isKindOfClass:[MGIconButton class]]) {
+                [self selectedRow:subview];
+                break;
+            }
+        }
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -118,8 +132,8 @@ static NSString *aboutTitle = @"About";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *title = [self.sectionTitles objectAtIndex:indexPath.section];
-    NSString *label = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 3];
-    NSString *icon = [[self.sections objectForKey:title] objectAtIndex:indexPath.row * 3 + 1];
+    NSString *label = [self.sections[title] objectAtIndex:indexPath.row * 3];
+    NSString *icon = [self.sections[title] objectAtIndex:indexPath.row * 3 + 1];
     
     // Create new cell (or cached version)
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:title];
@@ -162,6 +176,7 @@ static NSString *aboutTitle = @"About";
 - (void)selectedRow:(id)sender
 {
     static MGIconButton *last = nil;
+    
     if(last) {
         [last setSelected:NO];
         [last setBackgroundColor:[UIColor clearColor]];
@@ -174,7 +189,7 @@ static NSString *aboutTitle = @"About";
     if(self.delegate) {
         NSIndexPath *path = last.identifier;
         NSString *title = [self.sectionTitles objectAtIndex:path.section];
-        NSNumber *value = [[self.sections objectForKey:title] objectAtIndex:path.row * 3 + 2];
+        NSNumber *value = [self.sections[title] objectAtIndex:path.row * 3 + 2];
         [self.delegate selectedBranch:[value intValue]];
     }
 }
@@ -197,7 +212,7 @@ static NSString *aboutTitle = @"About";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSString *title = [self.sectionTitles objectAtIndex:section];
-    return [[self.sections objectForKey:title] count] / 3;
+    return [self.sections[title] count] / 3;
 }
 
 

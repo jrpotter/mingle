@@ -1,5 +1,5 @@
 //
-//  MGProfileViewController.h
+//  MGNavigationPushedViewController.h
 //  mingle
 //
 //  Created by UNC ResNET on 7/20/14.
@@ -8,6 +8,6 @@
 
 #import "MGNavigationViewController.h"
 
-@interface MGProfileViewController : MGNavigationViewController
-- (id)initWithUserData:(NSDictionary *)userData;
+@interface MGNavigationPushedViewController : MGNavigationViewController
+
 @end

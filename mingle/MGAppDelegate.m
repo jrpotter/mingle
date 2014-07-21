@@ -10,7 +10,9 @@
 #import "MGRootViewController.h"
 #import "MGLoginViewController.h"
 #import "MGWelcomeViewController.h"
+#import "MGConnection.h"
 #import "MGSession.h"
+#import "UIView+ViewEffects.h"
 
 @implementation MGAppDelegate
 
@@ -19,14 +21,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self presentLoginViewController:NO];
     
-    // Check if a mingle account has been instantiated (this is just the storage of the username and password, which is sent to
-    // every call to the server anyways). Otherwise, see if a Facebook session exists and watch for state changes
-    // If neither is the case, we present the login screen.
+    // We attempt to login if possible, in order to save user data that we need
     if([[MGSession instance] getLoginStatus]) {
-        [self presentPostLoginViewController];
-    } else {
-        [self presentLoginViewController];
+        UIView *overlay = [UIView addLoadingOverlay];
+        [[MGSession instance] login:[[MGSession instance] credentials] complete:^(NSDictionary *response, NSError *error) {
+            [overlay removeFromSuperview];
+            if([MGConnection responseErrorString:response error:error] == nil) {
+                [self presentPostLoginViewController:YES];
+            } else {
+                [[MGSession instance] logout];
+            }
+        }];
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -71,16 +78,22 @@
 
 #pragma mark - Custom Methods
 
-- (void)presentLoginViewController
+- (void)presentLoginViewController:(BOOL)animated
 {
-    [UIView transitionWithView:self.window
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ self.window.rootViewController = [[MGLoginViewController alloc] init]; }
-                    completion:nil];
+    MGLoginViewController *login = [[MGLoginViewController alloc] init];
+    if(animated) {
+        [UIView transitionWithView:self.window
+                          duration:0.5
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{ [self.window setRootViewController:login]; }
+                        completion:nil];
+    } else {
+        [self.window setRootViewController:login];
+    }
+    
 }
 
-- (void)presentPostLoginViewController
+- (void)presentPostLoginViewController:(BOOL)animated
 {
     UIViewController *next = nil;
     NSString *welcome = @"shownWelcome";
@@ -92,11 +105,15 @@
         next = [[MGRootViewController alloc] init];
     }
     
-    [UIView transitionWithView:self.window
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ self.window.rootViewController = next; }
-                    completion:nil];
+    if(animated) {
+        [UIView transitionWithView:self.window
+                          duration:0.5
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{ [self.window setRootViewController:next]; }
+                        completion:nil];
+    } else {
+        [self.window setRootViewController:next];
+    }
 }
 
 

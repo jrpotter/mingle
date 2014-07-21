@@ -7,6 +7,8 @@
 //
 
 #import "MGSpringboardHeaderViewController.h"
+#import "MGConnection.h"
+#import "MGSession.h"
 #import "UIColor+Hex.h"
 
 @interface MGSpringboardHeaderViewController ()
@@ -23,15 +25,31 @@
     self = [super init];
     if (self) {
         
+        NSDictionary *userData = [[MGSession instance] userData];
+        
         _userName = [[UILabel alloc] init];
         [_userName setFont:MINGLE_FONT];
-        [_userName setText:@"Joshua Potter"];
         [_userName setTextColor:[UIColor whiteColor]];
         [_userName setTranslatesAutoresizingMaskIntoConstraints:NO];
+        if([userData[@"name"] length] > 0) {
+            [_userName setText:userData[@"name"]];
+        } else {
+            [_userName setText:@"Anonymous"];
+        }
         
         _profileImage = [[UIImageView alloc] init];
-        [_profileImage.layer setCornerRadius:23];
+        [_profileImage setClipsToBounds:YES];
+        [_profileImage.layer setCornerRadius:(45/2)];
+        [_profileImage setContentMode:UIViewContentModeScaleAspectFill];
         [_profileImage setTranslatesAutoresizingMaskIntoConstraints:NO];
+        if([userData[@"profile_picture"] length] > 0) {
+            NSString *path = [MINGLE_ROOT_URL stringByAppendingString:userData[@"profile_picture"]];
+            [MGConnection getOpenImage:path complete:^(UIImage *image) {
+                [_profileImage setImage:((image == nil) ? EMPTY_PROFILE_IMAGE : image)];
+            }];
+        } else {
+            [_profileImage setImage:EMPTY_PROFILE_IMAGE];
+        }
         
     }
     
@@ -61,7 +79,6 @@
         [self.view.layer addSublayer:topBorder];
         
     }
-    
 }
 
 - (void)viewDidLoad
@@ -71,7 +88,6 @@
     // Build Hierarchy
     [self.view addSubview:self.profileImage];
     [self.view addSubview:self.userName];
-    [self.profileImage setBackgroundColor:[UIColor blueColor]];
     
     // Add Constraints (Profile)
     [self.view addConstraints:[NSLayoutConstraint
