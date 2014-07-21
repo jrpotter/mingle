@@ -74,6 +74,7 @@ static NSString *aboutTitle = @"About";
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
     for(UIView *view in cell.contentView.subviews) {

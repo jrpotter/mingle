@@ -9,6 +9,7 @@
 #import "MGPageViewController.h"
 
 @interface MGPageViewController ()
+@property (nonatomic) BOOL scrolling;
 @property (nonatomic) BOOL changedOffset;
 @property (nonatomic) CGPoint offsetPosition;
 @property (strong, nonatomic) UIScrollView *scrollView;
@@ -32,6 +33,7 @@
         _active = nil;
         _delegate = nil;
         _dataSource = nil;
+        _scrolling = NO;
         _changedOffset = YES;
         _offsetPosition = CGPointMake(0, 0);
         _scrollView = [[UIScrollView alloc] init];
@@ -39,6 +41,8 @@
         [_scrollView setPagingEnabled:YES];
         [_scrollView setMaximumZoomScale:1.0];
         [_scrollView setMinimumZoomScale:1.0];
+        [_scrollView setShowsVerticalScrollIndicator:NO];
+        [_scrollView setShowsHorizontalScrollIndicator:NO];
         [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
     }
     
@@ -196,7 +200,6 @@
 #pragma mark - View Controller Methods
 
 // Try to load the surrounding controllers
-
 - (void)refreshLeft:(BOOL)refreshLeft refreshRight:(BOOL)refreshRight
 {
     // We should only relayout the page if a change has occurred

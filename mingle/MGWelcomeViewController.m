@@ -79,14 +79,14 @@ static NSInteger slideCount = 3;
     [_welcomeSlides setDataSource:nil];
 }
 
+
+#pragma mark - View
+
 - (void)postLogin
 {
     MGAppDelegate *appDelegate = (MGAppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate presentPostLoginViewController:YES];
 }
-
-
-#pragma mark - View
 
 - (void)viewDidLoad
 {

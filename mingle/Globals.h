@@ -44,6 +44,8 @@
 #define BROWSE_ICON                         @"\ue6c2"
 #define CAMERA_ICON                         @"\ue60f"
 #define CHECKMARK_ICON                      @"\ue6fe"
+#define CHEVRON_LEFT_ICON                   @"\ue918"
+#define CHEVRON_RIGHT_ICON                  @"\ue91b"
 #define CREATE_ICON                         @"\ue702"
 #define CLOSE_ICON                          @"\ue6fa"
 #define CONFIRM_ICON                        @"\ue6fb"

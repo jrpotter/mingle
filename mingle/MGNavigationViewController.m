@@ -201,10 +201,10 @@
                                views:@{@"push": self.pushView, @"view": self.view}]];
     
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:|-0-[push]-0-|"
+                               constraintsWithVisualFormat:@"V:|-0-[push(==view)]-0-|"
                                options:NSLayoutFormatAlignAllCenterX
                                metrics:nil
-                               views:@{@"push": self.pushView}]];
+                               views:@{@"push": self.pushView, @"view": self.view}]];
     
     // Lastly, layout the push view
     [self layoutStack];

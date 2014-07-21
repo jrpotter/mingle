@@ -30,7 +30,8 @@
 		215538AD197C986E001CA5C7 /* MGFriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */; };
 		215538B1197C9B73001CA5C7 /* MGImagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */; };
 		215538B4197C9BB3001CA5C7 /* MGNavigationPushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */; };
-		215538B8197CA1DB001CA5C7 /* MGEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B7197CA1DB001CA5C7 /* MGEventsViewController.m */; };
+		215538B8197CA1DB001CA5C7 /* MGEventBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B7197CA1DB001CA5C7 /* MGEventBrowseViewController.m */; };
+		215538BC197CB2ED001CA5C7 /* MGEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538BB197CB2ED001CA5C7 /* MGEventViewController.m */; };
 		2157FD11197B7D8500123CEB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */; };
 		2157FD14197B7F1C00123CEB /* welcome_slide_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */; };
 		2157FD17197B7F3900123CEB /* welcome_slide_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2157FD16197B7F3900123CEB /* welcome_slide_1.jpg */; };
@@ -104,9 +105,11 @@
 		215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGImagesListViewController.m; sourceTree = "<group>"; };
 		215538B2197C9BB3001CA5C7 /* MGNavigationPushedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNavigationPushedViewController.h; sourceTree = "<group>"; };
 		215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNavigationPushedViewController.m; sourceTree = "<group>"; };
-		215538B6197CA1DB001CA5C7 /* MGEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGEventsViewController.h; sourceTree = "<group>"; };
-		215538B7197CA1DB001CA5C7 /* MGEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGEventsViewController.m; sourceTree = "<group>"; };
+		215538B6197CA1DB001CA5C7 /* MGEventBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGEventBrowseViewController.h; sourceTree = "<group>"; };
+		215538B7197CA1DB001CA5C7 /* MGEventBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGEventBrowseViewController.m; sourceTree = "<group>"; };
 		215538B9197CAD4F001CA5C7 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
+		215538BA197CB2ED001CA5C7 /* MGEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGEventViewController.h; sourceTree = "<group>"; };
+		215538BB197CB2ED001CA5C7 /* MGEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGEventViewController.m; sourceTree = "<group>"; };
 		2157FD0F197B7D8500123CEB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		2157FD10197B7D8500123CEB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		2157FD12197B7F1C00123CEB /* welcome_slide_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome_slide_2.jpg; sourceTree = "<group>"; };
@@ -332,8 +335,10 @@
 		215538B5197CA142001CA5C7 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				215538B6197CA1DB001CA5C7 /* MGEventsViewController.h */,
-				215538B7197CA1DB001CA5C7 /* MGEventsViewController.m */,
+				215538BA197CB2ED001CA5C7 /* MGEventViewController.h */,
+				215538BB197CB2ED001CA5C7 /* MGEventViewController.m */,
+				215538B6197CA1DB001CA5C7 /* MGEventBrowseViewController.h */,
+				215538B7197CA1DB001CA5C7 /* MGEventBrowseViewController.m */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -356,10 +361,10 @@
 		2157FD1F197B845A00123CEB /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				2157FD20197B846F00123CEB /* MGNavigationViewController.h */,
-				2157FD21197B846F00123CEB /* MGNavigationViewController.m */,
 				215538B2197C9BB3001CA5C7 /* MGNavigationPushedViewController.h */,
 				215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */,
+				2157FD20197B846F00123CEB /* MGNavigationViewController.h */,
+				2157FD21197B846F00123CEB /* MGNavigationViewController.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -535,7 +540,7 @@
 				2155389F197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m in Sources */,
 				21E214B8197B3627004B16C7 /* MGSpringboardViewController.m in Sources */,
 				219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */,
-				215538B8197CA1DB001CA5C7 /* MGEventsViewController.m in Sources */,
+				215538B8197CA1DB001CA5C7 /* MGEventBrowseViewController.m in Sources */,
 				2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */,
 				215538A2197C3405001CA5C7 /* MGProfileImageViewController.m in Sources */,
 				210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */,
@@ -547,6 +552,7 @@
 				210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */,
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
 				215538A5197C4506001CA5C7 /* MGProfileActivityViewController.m in Sources */,
+				215538BC197CB2ED001CA5C7 /* MGEventViewController.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
 				215538B1197C9B73001CA5C7 /* MGImagesListViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,

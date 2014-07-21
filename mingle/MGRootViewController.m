@@ -9,7 +9,7 @@
 #import "MGRootViewController.h"
 #import "MGNavigationViewController.h"
 #import "MGSpringboardViewController.h"
-#import "MGEventsViewController.h"
+#import "MGEventBrowseViewController.h"
 #import "MGProfileViewController.h"
 #import "MGAppDelegate.h"
 #import "MGSession.h"
@@ -214,7 +214,7 @@
     switch(branch) {
             
         case BROWSE_BRANCH:
-            controller = [[MGEventsViewController alloc] init];
+            controller = [[MGEventBrowseViewController alloc] init];
             break;
             
         case CREATE_BRANCH:

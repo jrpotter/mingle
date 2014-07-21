@@ -34,6 +34,8 @@
             [MGConnection getOpenImage:[MINGLE_ROOT_URL stringByAppendingString:url] complete:^(UIImage *image) {
                 [_imageView setImage:((image == nil) ? EMPTY_PROFILE_IMAGE : image)];
             }];
+        } else {
+            [_imageView setImage:EMPTY_PROFILE_IMAGE];
         }
         
     }
