@@ -1,0 +1,615 @@
+- model: interest.Category
+  pk: 1
+  fields:
+    name: "Activism & Social Issues"
+
+- model: interest.Category
+  pk: 2
+  fields:
+    name: "Advertising & Marketing"
+
+- model: interest.Category
+  pk: 3
+  fields:
+    name: "Aerospace & Defense"
+
+- model: interest.Category
+  pk: 4
+  fields:
+    name: "Agriculture & Forestry"
+
+- model: interest.Category
+  pk: 5
+  fields:
+    name: "Animals"
+
+- model: interest.Category
+  pk: 6
+  fields:
+    name: "Apparel"
+
+- model: interest.Category
+  pk: 7
+  fields:
+    name: "Arts & Humanities"
+
+- model: interest.Category
+  pk: 8
+  fields:
+    name: "Audio Equipment"
+
+- model: interest.Category
+  pk: 9
+  fields:
+    name: "Auto Parts"
+
+- model: interest.Category
+  pk: 10
+  fields:
+    name: "Automotive"
+
+- model: interest.Category
+  pk: 11
+  fields:
+    name: "Beauty & Personal Care"
+
+- model: interest.Category
+  pk: 12
+  fields:
+    name: "Biological Sciences"
+
+- model: interest.Category
+  pk: 13
+  fields:
+    name: "Books & Literature"
+
+- model: interest.Category
+  pk: 14
+  fields:
+    name: "Building Materials"
+
+- model: interest.Category
+  pk: 15
+  fields:
+    name: "Business"
+
+- model: interest.Category
+  pk: 16
+  fields:
+    name: "Business Services & Consulting"
+
+- model: interest.Category
+  pk: 17
+  fields:
+    name: "Cameras & Camcorders"
+
+- model: interest.Category
+  pk: 18
+  fields:
+    name: "Central & Eastern Europe"
+
+- model: interest.Category
+  pk: 19
+  fields:
+    name: "Central & South Asia"
+
+- model: interest.Category
+  pk: 20
+  fields:
+    name: "Chemicals"
+
+- model: interest.Category
+  pk: 21
+  fields:
+    name: "Combat Sports"
+
+- model: interest.Category
+  pk: 22
+  fields:
+    name: "Comics & Animation"
+
+- model: interest.Category
+  pk: 23
+  fields:
+    name: "Computer Security"
+
+- model: interest.Category
+  pk: 24
+  fields:
+    name: "Computers & Electronics"
+
+- model: interest.Category
+  pk: 25
+  fields:
+    name: "Construction & Maintenance"
+
+- model: interest.Category
+  pk: 26
+  fields:
+    name: "Consumer Affairs & Product Reviews"
+
+- model: interest.Category
+  pk: 27
+  fields:
+    name: "Consumer Electronics"
+
+- model: interest.Category
+  pk: 28
+  fields:
+    name: "Corporate Events"
+
+- model: interest.Category
+  pk: 29
+  fields:
+    name: "Credit & Lending"
+
+- model: interest.Category
+  pk: 30
+  fields:
+    name: "Customer Services"
+
+- model: interest.Category
+  pk: 31
+  fields:
+    name: "Dating & Relationships"
+
+- model: interest.Category
+  pk: 32
+  fields:
+    name: "Design"
+
+- model: interest.Category
+  pk: 33
+  fields:
+    name: "E-Commerce"
+
+- model: interest.Category
+  pk: 34
+  fields:
+    name: "East Asia"
+
+- model: interest.Category
+  pk: 35
+  fields:
+    name: "Education"
+
+- model: interest.Category
+  pk: 36
+  fields:
+    name: "Electronics & Electrical"
+
+- model: interest.Category
+  pk: 37
+  fields:
+    name: "Energy & Utilities"
+
+- model: interest.Category
+  pk: 38
+  fields:
+    name: "Enterprise Technology"
+
+- model: interest.Category
+  pk: 39
+  fields:
+    name: "Entertainment"
+
+- model: interest.Category
+  pk: 40
+  fields:
+    name: "Face & Body Care"
+
+- model: interest.Category
+  pk: 41
+  fields:
+    name: "Finance & Insurance"
+
+- model: interest.Category
+  pk: 42
+  fields:
+    name: "Fitness"
+
+- model: interest.Category
+  pk: 43
+  fields:
+    name: "Flowers Gifts & Greetings"
+
+- model: interest.Category
+  pk: 44
+  fields:
+    name: "Food & Drink"
+
+- model: interest.Category
+  pk: 45
+  fields:
+    name: "Games"
+
+- model: interest.Category
+  pk: 46
+  fields:
+    name: "Government & Regulatory Bodies"
+
+- model: interest.Category
+  pk: 47
+  fields:
+    name: "Graphics & Publishing"
+
+- model: interest.Category
+  pk: 48
+  fields:
+    name: "Hair Care & Products"
+
+- model: interest.Category
+  pk: 49
+  fields:
+    name: "Hardware"
+
+- model: interest.Category
+  pk: 50
+  fields:
+    name: "Hardware Components"
+
+- model: interest.Category
+  pk: 51
+  fields:
+    name: "Hobbies"
+
+- model: interest.Category
+  pk: 52
+  fields:
+    name: "Home & Garden"
+
+- model: interest.Category
+  pk: 53
+  fields:
+    name: "Home Furnishings"
+
+- model: interest.Category
+  pk: 54
+  fields:
+    name: "Home Video"
+
+- model: interest.Category
+  pk: 55
+  fields:
+    name: "Human Resources"
+
+- model: interest.Category
+  pk: 56
+  fields:
+    name: "Humanities"
+
+- model: interest.Category
+  pk: 57
+  fields:
+    name: "Industrial Materials & Equipment"
+
+- model: interest.Category
+  pk: 58
+  fields:
+    name: "Industries"
+
+- model: interest.Category
+  pk: 59
+  fields:
+    name: "Insurance"
+
+- model: interest.Category
+  pk: 60
+  fields:
+    name: "Internet"
+
+- model: interest.Category
+  pk: 61
+  fields:
+    name: "Internet Software"
+
+- model: interest.Category
+  pk: 62
+  fields:
+    name: "Legal"
+
+- model: interest.Category
+  pk: 63
+  fields:
+    name: "Lifestyles"
+
+- model: interest.Category
+  pk: 64
+  fields:
+    name: "Local"
+
+- model: interest.Category
+  pk: 65
+  fields:
+    name: "Luxury Goods"
+
+- model: interest.Category
+  pk: 66
+  fields:
+    name: "Management & Corporate Operations"
+
+- model: interest.Category
+  pk: 67
+  fields:
+    name: "Manufacturing"
+
+- model: interest.Category
+  pk: 68
+  fields:
+    name: "Mexico & Central America"
+
+- model: interest.Category
+  pk: 69
+  fields:
+    name: "Middle East"
+
+- model: interest.Category
+  pk: 70
+  fields:
+    name: "Military"
+
+- model: interest.Category
+  pk: 71
+  fields:
+    name: "Mobile & Wireless"
+
+- model: interest.Category
+  pk: 72
+  fields:
+    name: "Movies"
+
+- model: interest.Category
+  pk: 73
+  fields:
+    name: "Multimedia Content"
+
+- model: interest.Category
+  pk: 74
+  fields:
+    name: "Music"
+
+- model: interest.Category
+  pk: 75
+  fields:
+    name: "Networking"
+
+- model: interest.Category
+  pk: 76
+  fields:
+    name: "News & Current Events"
+
+- model: interest.Category
+  pk: 77
+  fields:
+    name: "Oceania"
+
+- model: interest.Category
+  pk: 78
+  fields:
+    name: "Office & Printing Services"
+
+- model: interest.Category
+  pk: 79
+  fields:
+    name: "Online Goodies"
+
+- model: interest.Category
+  pk: 80
+  fields:
+    name: "Operating Systems"
+
+- model: interest.Category
+  pk: 81
+  fields:
+    name: "Outdoors"
+
+- model: interest.Category
+  pk: 82
+  fields:
+    name: "Parenting & Family"
+
+- model: interest.Category
+  pk: 83
+  fields:
+    name: "Peripherals"
+
+- model: interest.Category
+  pk: 84
+  fields:
+    name: "Personal Electronics"
+
+- model: interest.Category
+  pk: 85
+  fields:
+    name: "Pets"
+
+- model: interest.Category
+  pk: 86
+  fields:
+    name: "Phone Service Providers"
+
+- model: interest.Category
+  pk: 87
+  fields:
+    name: "Photo & Video"
+
+- model: interest.Category
+  pk: 88
+  fields:
+    name: "Photo & Video Equipment"
+
+- model: interest.Category
+  pk: 89
+  fields:
+    name: "Politics"
+
+- model: interest.Category
+  pk: 90
+  fields:
+    name: "Programming"
+
+- model: interest.Category
+  pk: 91
+  fields:
+    name: "Public Safety"
+
+- model: interest.Category
+  pk: 92
+  fields:
+    name: "Real Estate"
+
+- model: interest.Category
+  pk: 93
+  fields:
+    name: "Recreation"
+
+- model: interest.Category
+  pk: 94
+  fields:
+    name: "Reference"
+
+- model: interest.Category
+  pk: 95
+  fields:
+    name: "Regional Content"
+
+- model: interest.Category
+  pk: 96
+  fields:
+    name: "Restaurants"
+
+- model: interest.Category
+  pk: 97
+  fields:
+    name: "Retail Trade"
+
+- model: interest.Category
+  pk: 98
+  fields:
+    name: "Science"
+
+- model: interest.Category
+  pk: 99
+  fields:
+    name: "Service Providers"
+
+- model: interest.Category
+  pk: 100
+  fields:
+    name: "Shopping"
+
+- model: interest.Category
+  pk: 101
+  fields:
+    name: "Small Business"
+
+- model: interest.Category
+  pk: 102
+  fields:
+    name: "Social Networks & Online Communities"
+
+- model: interest.Category
+  pk: 103
+  fields:
+    name: "Social Science"
+
+- model: interest.Category
+  pk: 104
+  fields:
+    name: "Social Services"
+
+- model: interest.Category
+  pk: 105
+  fields:
+    name: "Society"
+
+- model: interest.Category
+  pk: 106
+  fields:
+    name: "Software"
+
+- model: interest.Category
+  pk: 107
+  fields:
+    name: "South America"
+
+- model: interest.Category
+  pk: 108
+  fields:
+    name: "Southeast Asia"
+
+- model: interest.Category
+  pk: 109
+  fields:
+    name: "Spas & Beauty Services"
+
+- model: interest.Category
+  pk: 110
+  fields:
+    name: "Sports"
+
+- model: interest.Category
+  pk: 111
+  fields:
+    name: "Storage"
+
+- model: interest.Category
+  pk: 112
+  fields:
+    name: "TV"
+
+- model: interest.Category
+  pk: 113
+  fields:
+    name: "TV Programs"
+
+- model: interest.Category
+  pk: 114
+  fields:
+    name: "Telecommunications"
+
+- model: interest.Category
+  pk: 115
+  fields:
+    name: "Transportation & Logistics"
+
+- model: interest.Category
+  pk: 116
+  fields:
+    name: "Travel"
+
+- model: interest.Category
+  pk: 117
+  fields:
+    name: "US & Canada"
+
+- model: interest.Category
+  pk: 118
+  fields:
+    name: "Vacation Destinations"
+
+- model: interest.Category
+  pk: 119
+  fields:
+    name: "Vehicle Brands"
+
+- model: interest.Category
+  pk: 120
+  fields:
+    name: "Video Games"
+
+- model: interest.Category
+  pk: 121
+  fields:
+    name: "Web Services"
+
+- model: interest.Category
+  pk: 122
+  fields:
+    name: "Western Europe"
+
+- model: interest.Category
+  pk: 123
+  fields:
+    name: "Wood & Plastics"
+

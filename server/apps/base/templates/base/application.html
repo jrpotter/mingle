@@ -1,0 +1,109 @@
+{% extends 'foundation/base.html' %}
+{% load foundation_tags %}
+{% load staticfiles %}
+
+{% block title %}FuzzyKayak{% endblock %}
+
+{% block css %}
+{% foundation_css 'foundation-icons' %}
+<link rel="stylesheet" type="text/css" href="{% static 'base/application.css' %}">
+{% endblock %}
+
+{% block body_js %}
+<script src="{% static 'base/application.js' %}"></script>
+{% endblock %}
+
+{% block base_body %}
+<div id="content">
+
+    <div id="site-bar">
+
+        <!-- Utility Bar -->
+        <nav id="utility-bar" class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name"></li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li><a href="#"><i class="fi-rss"></i></a></li>
+                    <li class="utility-button" data-target="login"><a href="#">
+                        Sign In<span class="down-arrow"></span>
+                    </a></li>
+                    <li class="utility-button" data-target="search"><a href="#">
+                        <i class="fi-magnifying-glass"></i>
+                        Search<span class="down-arrow"></span>
+                    </a></li>
+                </ul>
+            </section>
+        </nav>
+
+        <!-- Login Form -->
+        <form id="login" class="utility-form">
+            <div class="row">
+                <div class="large-5 columns">
+                    {{ login_form.email }}
+                </div>
+                <div class="large-5 columns">
+                    {{ login_form.password }}
+                </div>
+                <div class="large-2 columns">
+                    <input type="submit" class="button" value="Login">
+                </div>
+            </div>
+        </form>
+
+        <!-- Search Bar -->
+        <form id="search" class="utility-form">
+            <div class="row">
+                <div class="large-10 columns">
+                    {{ search_form.query }}
+                </div>
+                <div class="large-2 columns">
+                    <input type="submit" class="button" value="Search">
+                </div>
+            </div>
+        </form>
+
+        <!-- Navigation Bar -->
+        <nav id="navigation-bar" class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="/">FuzzyKayak</a></h1>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="left">
+                    <li data-target="products"><a href="#">Products<span class="down-arrow"></span></a></li>
+                    <li data-target="about"><a href="#">About<span class="down-arrow"></span></a></li>
+                    <li data-target="forums"><a href="#">Forums<span class="down-arrow"></span></a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </section>
+        </nav>
+
+        <!-- Products -->
+        <div id="products" class="navigation-display">Products</div>
+
+        <!-- About -->
+        <div id="about" class="navigation-display">About</div>
+
+        <!-- Forums -->
+        <div id="forums" class="navigation-display">Forums</div>
+
+    </div>
+
+    <div id="content-well">
+        {% block content-well %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <hr />
+    <footer>
+        <div class="row">
+            <div class="large-12 columns">
+                <span>&copy FuzzyKayak Inc.</span>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

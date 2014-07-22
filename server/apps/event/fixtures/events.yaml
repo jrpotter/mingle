@@ -1,0 +1,155 @@
+- model: event.Event
+  pk: 1
+  fields:
+    title: "Ten St. Laundromat"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -6.345126
+    heading: -125.916862
+    location: "SRID=4326;POINT(-73.982710 40.727973)"
+
+- model: event.Event
+  pk: 2
+  fields:
+    title: "Big Gay Ice Cream Shop"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -3.835155
+    heading: 29.420252
+    location: "SRID=4326;POINT(-73.984169 40.726298)"
+
+- model: event.Event
+  pk: 3
+  fields:
+    title: "Washington Square Park"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: 18.288577
+    heading: -149.345761
+    location: "SRID=4326;POINT(-73.996986 40.731451)"
+
+- model: event.Event
+  pk: 4
+  fields:
+    title: "Zumiez"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -3.013620
+    heading: -151.001873
+    location: "SRID=4326;POINT(-73.990613 40.733842)"
+
+- model: event.Event
+  pk: 5
+  fields:
+    title: "The New York Eye And Ear Infirmary"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: 2.114977
+    heading: -107.2221289
+    location: "SRID=4326;POINT(-73.984390 40.732102)"
+
+- model: event.Event
+  pk: 6
+  fields:
+    title: "CVS"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: 0.463693
+    heading: -113.779669
+    location: "SRID=4326;POINT(-73.988167 40.736915)"
+
+- model: event.Event
+  pk: 7
+  fields:
+    title: "Trader Joe's"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: 1.34839
+    heading: -56.579536
+    location: "SRID=4326;POINT(-73.993617 40.741792)"
+
+- model: event.Event
+  pk: 8
+  fields:
+    title: "This Guy"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -6.513402
+    heading: -9.690856
+    location: "SRID=4326;POINT(-73.996857 40.744572)"
+
+- model: event.Event
+  pk: 9
+  fields:
+    title: "Blockheads"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -1.072754
+    heading: 106.525650
+    location: "SRID=4326;POINT(-73.978275 40.745434)"
+
+- model: event.Event
+  pk: 10
+  fields:
+    title: "East River"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: 2.382646
+    heading: 84.026546
+    location: "SRID=4326;POINT(-73.971323 40.744182)"
+
+- model: event.Event
+  pk: 11
+  fields:
+    title: "Queensbridge Park"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: 3.355996
+    heading: -45.277817
+    location: "SRID=4326;POINT(-73.947355 40.756341)"
+
+- model: event.Event
+  pk: 12
+  fields:
+    title: "580 Main Street"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -0.5019882
+    heading: 83.271238
+    location: "SRID=4326;POINT(-73.949329 40.762729)"
+
+- model: event.Event
+  pk: 13
+  fields:
+    title: "Onsite Construction Enterprise"
+    datetime: 2014-07-30 12:00
+    max_size: 100
+    creator: 1
+    zoom: 1
+    pitch: -3.44594098
+    heading: -202.479761
+    location: "SRID=4326;POINT(-73.937527 40.766613)"

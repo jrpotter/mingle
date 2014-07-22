@@ -1,0 +1,75 @@
+body {
+    background-color: #CCC;
+}
+
+#content {
+    margin: 0 auto;
+    max-width: 90%;
+    min-width: 900px;
+    background-color: white;
+}
+
+.utility-form {
+    margin: 0;
+}
+
+.utility-form .row {
+    margin: 0;
+    max-width: 100%;
+}
+
+.utility-form .row > div {
+    padding: 0;
+}
+
+.utility-form .row input {
+    margin: 0;
+    width: 100%;
+    height: 45px;
+}
+
+.utility-form .row .button {
+    padding: 0;
+}
+
+#site-bar nav .up-arrow,
+#site-bar nav .down-arrow {
+    margin-left: 4px;
+}
+
+#site-bar nav li:hover .up-arrow,
+#site-bar nav li:hover .down-arrow {
+    color: #62B0D9;
+}
+
+#site-bar nav .down-arrow:before {
+    content: "\25BC";
+}
+
+#site-bar nav .up-arrow:before {
+    content: "\25B2";
+}
+
+#utility-bar li:hover .fi-rss {
+    color: #F26522;
+}
+
+#utility-bar .fi-magnifying-glass {
+    margin-right: 4px;
+}
+
+.navigation-display {
+    width: 100%;
+    height: 45px;
+    background-color: #BBB;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer span {
+    display: block;
+    margin-top: -20px;
+}

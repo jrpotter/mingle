@@ -1,0 +1,35 @@
+- model: alias.Alias
+  pk: 1
+  fields:
+    name: "Test Name"
+    email: "test@testing.com"
+    date_of_birth: 1994-04-14
+    salt: "tcHwHyc24ltR4Tn7"
+    password: "RtyawpWZhoqX63HhO+KtX1TgyfNs126rDcbLG33cAok="
+    last_login: 2014-06-20 12:00
+    date_added: 2014-06-20 12:00
+    friends: [2, 3]
+
+- model: alias.Alias
+  pk: 2
+  fields:
+    name: "Justin Reeves"
+    email: "jdreeves@live.unc.edu"
+    date_of_birth: 1994-08-20
+    salt: "tcHwHyc24ltR4Tn7"
+    password: "RtyawpWZhoqX63HhO+KtX1TgyfNs126rDcbLG33cAok="
+    last_login: 2014-06-20 12:00
+    date_added: 2014-06-20 12:00
+    friends: [1, 3]
+
+- model: alias.Alias
+  pk: 3
+  fields:
+    name: "Joshua Potter"
+    email: "jrpotter@live.unc.edu"
+    date_of_birth: 1994-04-14
+    salt: "tcHwHyc24ltR4Tn7"
+    password: "RtyawpWZhoqX63HhO+KtX1TgyfNs126rDcbLG33cAok="
+    last_login: 2014-06-20 12:00
+    date_added: 2014-06-20 12:00
+    friends: [1, 2]

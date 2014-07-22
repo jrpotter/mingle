@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Street View</title>
+        <link rel="stylesheet" href="{% static 'event/street.css' %}">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="{% static 'event/street.js' %}"></script>
+        <script>
+            google.maps.event.addDomListener(window, 'load', initialize({
+                zoom: {{ zoom }},
+                pitch: {{ pitch }},
+                heading: {{ heading }},
+                latitude: {{ latitude }},
+                longitude: {{ longitude }}
+            }));
+        </script>
+    </head>
+    <body>
+        <div id="pano"></div>
+        <input id="zoom" type="text">
+        <input id="pitch" type="text">
+        <input id="heading" type="text">
+    </body>
+</html>

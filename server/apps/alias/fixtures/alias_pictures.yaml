@@ -1,0 +1,27 @@
+- model: alias.AliasPictures
+  pk: 1
+  fields:
+    alias: 2
+    is_profile_picture: true
+    picture: "/media/justin_1.jpg"
+
+- model: alias.AliasPictures
+  pk: 2
+  fields:
+    alias: 2
+    is_profile_picture: false
+    picture: "/media/justin_2.jpg"
+
+- model: alias.AliasPictures
+  pk: 3
+  fields:
+    alias: 3
+    is_profile_picture: true
+    picture: "/media/joshua_1.jpg"
+
+- model: alias.AliasPictures
+  pk: 4
+  fields:
+    alias: 1
+    is_profile_picture: true
+    picture: "/media/joshua_1.jpg"

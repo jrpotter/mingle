@@ -1,0 +1,29 @@
+{% extends 'foundation/base.html' %}
+{% load foundation_tags %}
+{% load alias_extras %}
+{% load staticfiles %}
+
+{% block title %}Create Account{% endblock %}
+
+{% block css %}
+{% foundation_css 'foundation-icons' %}
+<link rel="stylesheet" type="text/css" href="{% static 'icomoon/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'alias/create.css' %}">
+{% endblock %}
+
+{% block base_body %}
+    <!-- Navigation Bar -->
+    <nav id="navigation-bar" class="top-bar" data-topbar>
+        <h1>mingle</h1>
+    </nav>
+    <div id="content" class="created">
+        <div class="panel">
+            <p>Account Created.</p>
+            <span class="icon-happy"></span>
+            <p>Welcome to Mingle!</p>
+        </div>
+        <div class="login">
+            <a href="mingle://" class="button radius">Log in</a>
+        </div>
+    </div>
+{% endblock %}

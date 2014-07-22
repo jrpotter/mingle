@@ -1,0 +1,38 @@
+By Tuesday
+===================
+Allow logging in
+Display in alert view any errors
+Save configuration
+Show welcome pages
+Open to navigation view
+Build springboard
+In profile, allow logging out
+
+
+Justin 
+============================
+I would prefer to have it with more of a beveled look for the buttons, like they are standing out. 
+Also the center of the page should have a shadow so it looks like it is above the background, not just pasted on it. 
+As for the background how about we do something similar to autodesk. Have the background be the entire image but in black/white mask. 
+Then where the rotating images are, the mask is removed. As the images change the background changes as well. Check out http://www.autodesk.com/ for a better idea.
+Sizing-wise that is actually pretty good.
+I'm not sure of what you are talking about with the page shrinking... why is the page shrinking?
+Where would you want animations? I do not like them personally, seem like too much of a gimmicky move.
+When the person signs in it should just refresh the page they are on and make them signed in.
+Ah. Sign In, should change to [username] and in the drop down have options to view/edit account as well as log out. 
+As we see how the various projects turn out we can add features as necessary.
+When you resize the window nothing should change. Stretching the page will only make things look bad. They'll just have to scroll or "ctrl -". 
+I do not know what goes into making a mobile friendly site but I assume we'll need to recreate a version optimized for mobile devices. Which means another site???
+Create acount should be under sign in
+Under sign in there should be two headers. One aligned to the left and the other to the midline. 
+The first will be Existing User and have the sign in boxes underneath, the next will be a Create Account with the ability to enter your name and 
+email that will take you to a more complete page when you hit create.
+
+Events
+============================
+Go through models and map out
+Create a form derived from EventAddress Model
+Use this form to validate posted data to /create
+Enter in data
+The view page takes in an event id
+If event seen for first time, geocache and save lat/lon

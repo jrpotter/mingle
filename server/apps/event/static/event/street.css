@@ -1,0 +1,15 @@
+html, body, #pano {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#heading, #pitch, #zoom {
+    display: none;
+}
+
+.gm-style-cc, .gmnoprint {
+    top: 0;
+    bottom: initial !important;
+}
