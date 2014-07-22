@@ -21,14 +21,13 @@
 		210974C019797BCA00DB2A0F /* mingleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974BF19797BCA00DB2A0F /* mingleTests.m */; };
 		210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974CA19797C0300DB2A0F /* MGRootViewController.m */; };
 		210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210974DB1979830E00DB2A0F /* MGLoginViewController.m */; };
+		2113146C197DBF3600C51089 /* MGProfileButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113146B197DBF3600C51089 /* MGProfileButtonsViewController.m */; };
+		2113146F197DD71200C51089 /* MGProfileTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113146E197DD71200C51089 /* MGProfileTabViewController.m */; };
 		2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127BA4A197B48BA00649946 /* MGSpringboardHeaderViewController.m */; };
+		2137A166197DDC1D0074B5B1 /* MGGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2137A165197DDC1D0074B5B1 /* MGGroupsListViewController.m */; };
 		2155389C197C0B0D001CA5C7 /* default_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2155389B197C0B0D001CA5C7 /* default_profile.png */; };
-		2155389F197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2155389E197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m */; };
-		215538A2197C3405001CA5C7 /* MGProfileImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538A1197C3405001CA5C7 /* MGProfileImageViewController.m */; };
-		215538A5197C4506001CA5C7 /* MGProfileActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538A4197C4506001CA5C7 /* MGProfileActivityViewController.m */; };
 		215538A7197C5403001CA5C7 /* Walkway_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215538A6197C5395001CA5C7 /* Walkway_Black.ttf */; };
 		215538AD197C986E001CA5C7 /* MGFriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */; };
-		215538B1197C9B73001CA5C7 /* MGImagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */; };
 		215538B4197C9BB3001CA5C7 /* MGNavigationPushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */; };
 		215538B8197CA1DB001CA5C7 /* MGEventBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538B7197CA1DB001CA5C7 /* MGEventBrowseViewController.m */; };
 		215538BC197CB2ED001CA5C7 /* MGEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215538BB197CB2ED001CA5C7 /* MGEventViewController.m */; };
@@ -47,6 +46,7 @@
 		21B5218D1979A666004BB5AD /* mingle_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B5218C1979A666004BB5AD /* mingle_background.png */; };
 		21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5218F1979B0DA004BB5AD /* MGLoginFormViewController.m */; };
 		21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B521921979C188004BB5AD /* MGLoginLinksViewController.m */; };
+		21BA08F1197DE75B00F6C2E4 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215538B9197CAD4F001CA5C7 /* icomoon.ttf */; };
 		21E2149B197ACFA7004B16C7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E2149A197ACFA7004B16C7 /* FacebookSDK.framework */; };
 		21E2149F197AD54B004B16C7 /* MGIconButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E2149E197AD54B004B16C7 /* MGIconButtonViewController.m */; };
 		21E214A5197AF4BF004B16C7 /* MGSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E214A4197AF4BF004B16C7 /* MGSession.m */; };
@@ -89,20 +89,18 @@
 		210974CE1979818300DB2A0F /* Bauhaus93.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus93.ttf; sourceTree = "<group>"; };
 		210974DA1979830E00DB2A0F /* MGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLoginViewController.h; sourceTree = "<group>"; };
 		210974DB1979830E00DB2A0F /* MGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLoginViewController.m; sourceTree = "<group>"; };
+		2113146A197DBF3600C51089 /* MGProfileButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfileButtonsViewController.h; sourceTree = "<group>"; };
+		2113146B197DBF3600C51089 /* MGProfileButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfileButtonsViewController.m; sourceTree = "<group>"; };
+		2113146D197DD71200C51089 /* MGProfileTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfileTabViewController.h; sourceTree = "<group>"; };
+		2113146E197DD71200C51089 /* MGProfileTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfileTabViewController.m; sourceTree = "<group>"; };
 		2127BA49197B48BA00649946 /* MGSpringboardHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSpringboardHeaderViewController.h; sourceTree = "<group>"; };
 		2127BA4A197B48BA00649946 /* MGSpringboardHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSpringboardHeaderViewController.m; sourceTree = "<group>"; };
+		2137A164197DDC1D0074B5B1 /* MGGroupsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGroupsListViewController.h; sourceTree = "<group>"; };
+		2137A165197DDC1D0074B5B1 /* MGGroupsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGroupsListViewController.m; sourceTree = "<group>"; };
 		2155389B197C0B0D001CA5C7 /* default_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_profile.png; sourceTree = "<group>"; };
-		2155389D197C2F7C001CA5C7 /* MGProfilePictureEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfilePictureEditViewController.h; sourceTree = "<group>"; };
-		2155389E197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfilePictureEditViewController.m; sourceTree = "<group>"; };
-		215538A0197C3405001CA5C7 /* MGProfileImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfileImageViewController.h; sourceTree = "<group>"; };
-		215538A1197C3405001CA5C7 /* MGProfileImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfileImageViewController.m; sourceTree = "<group>"; };
-		215538A3197C4506001CA5C7 /* MGProfileActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGProfileActivityViewController.h; sourceTree = "<group>"; };
-		215538A4197C4506001CA5C7 /* MGProfileActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGProfileActivityViewController.m; sourceTree = "<group>"; };
 		215538A6197C5395001CA5C7 /* Walkway_Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Walkway_Black.ttf; sourceTree = "<group>"; };
 		215538AB197C986E001CA5C7 /* MGFriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFriendsListViewController.h; sourceTree = "<group>"; };
 		215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFriendsListViewController.m; sourceTree = "<group>"; };
-		215538AF197C9B73001CA5C7 /* MGImagesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImagesListViewController.h; sourceTree = "<group>"; };
-		215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGImagesListViewController.m; sourceTree = "<group>"; };
 		215538B2197C9BB3001CA5C7 /* MGNavigationPushedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNavigationPushedViewController.h; sourceTree = "<group>"; };
 		215538B3197C9BB3001CA5C7 /* MGNavigationPushedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNavigationPushedViewController.m; sourceTree = "<group>"; };
 		215538B6197CA1DB001CA5C7 /* MGEventBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGEventBrowseViewController.h; sourceTree = "<group>"; };
@@ -213,8 +211,6 @@
 				2155389A197C011F001CA5C7 /* Categories */,
 				21E214A9197B0003004B16C7 /* Connection */,
 				215538B5197CA142001CA5C7 /* Events */,
-				215538AA197C985E001CA5C7 /* Friends */,
-				215538AE197C9B62001CA5C7 /* Images */,
 				210974D9197982DC00DB2A0F /* Login */,
 				2157FD1F197B845A00123CEB /* Navigation */,
 				219A9AE31979D68A0060480F /* Pages */,
@@ -314,24 +310,6 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		215538AA197C985E001CA5C7 /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				215538AB197C986E001CA5C7 /* MGFriendsListViewController.h */,
-				215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */,
-			);
-			name = Friends;
-			sourceTree = "<group>";
-		};
-		215538AE197C9B62001CA5C7 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				215538AF197C9B73001CA5C7 /* MGImagesListViewController.h */,
-				215538B0197C9B73001CA5C7 /* MGImagesListViewController.m */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		215538B5197CA142001CA5C7 /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,12 +326,14 @@
 			children = (
 				2157FD23197B869300123CEB /* MGProfileViewController.h */,
 				2157FD24197B869300123CEB /* MGProfileViewController.m */,
-				215538A0197C3405001CA5C7 /* MGProfileImageViewController.h */,
-				215538A1197C3405001CA5C7 /* MGProfileImageViewController.m */,
-				2155389D197C2F7C001CA5C7 /* MGProfilePictureEditViewController.h */,
-				2155389E197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m */,
-				215538A3197C4506001CA5C7 /* MGProfileActivityViewController.h */,
-				215538A4197C4506001CA5C7 /* MGProfileActivityViewController.m */,
+				2113146A197DBF3600C51089 /* MGProfileButtonsViewController.h */,
+				2113146B197DBF3600C51089 /* MGProfileButtonsViewController.m */,
+				2113146D197DD71200C51089 /* MGProfileTabViewController.h */,
+				2113146E197DD71200C51089 /* MGProfileTabViewController.m */,
+				215538AB197C986E001CA5C7 /* MGFriendsListViewController.h */,
+				215538AC197C986E001CA5C7 /* MGFriendsListViewController.m */,
+				2137A164197DDC1D0074B5B1 /* MGGroupsListViewController.h */,
+				2137A165197DDC1D0074B5B1 /* MGGroupsListViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -506,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BA08F1197DE75B00F6C2E4 /* icomoon.ttf in Resources */,
 				215538A7197C5403001CA5C7 /* Walkway_Black.ttf in Resources */,
 				216AA1FB1979CBF700791F14 /* Bauhaus93.ttf in Resources */,
 				210974A519797BCA00DB2A0F /* InfoPlist.strings in Resources */,
@@ -535,14 +516,13 @@
 			files = (
 				21B2B7BC197B63EA008108F9 /* MGIconButton.m in Sources */,
 				210974AB19797BCA00DB2A0F /* MGAppDelegate.m in Sources */,
+				2113146C197DBF3600C51089 /* MGProfileButtonsViewController.m in Sources */,
 				215538B4197C9BB3001CA5C7 /* MGNavigationPushedViewController.m in Sources */,
 				21E214A8197AF737004B16C7 /* MGConnection.m in Sources */,
-				2155389F197C2F7C001CA5C7 /* MGProfilePictureEditViewController.m in Sources */,
 				21E214B8197B3627004B16C7 /* MGSpringboardViewController.m in Sources */,
 				219A9AE61979D6A10060480F /* MGPageViewController.m in Sources */,
 				215538B8197CA1DB001CA5C7 /* MGEventBrowseViewController.m in Sources */,
 				2127BA4B197B48BA00649946 /* MGSpringboardHeaderViewController.m in Sources */,
-				215538A2197C3405001CA5C7 /* MGProfileImageViewController.m in Sources */,
 				210974CB19797C0300DB2A0F /* MGRootViewController.m in Sources */,
 				219A9AF21979F24E0060480F /* MGWelcomeViewController.m in Sources */,
 				21E214BF197B3AB7004B16C7 /* UIView+ViewEffects.m in Sources */,
@@ -551,17 +531,17 @@
 				2157FD22197B846F00123CEB /* MGNavigationViewController.m in Sources */,
 				210974DC1979830E00DB2A0F /* MGLoginViewController.m in Sources */,
 				210974A719797BCA00DB2A0F /* main.m in Sources */,
-				215538A5197C4506001CA5C7 /* MGProfileActivityViewController.m in Sources */,
 				215538BC197CB2ED001CA5C7 /* MGEventViewController.m in Sources */,
 				21B521931979C188004BB5AD /* MGLoginLinksViewController.m in Sources */,
-				215538B1197C9B73001CA5C7 /* MGImagesListViewController.m in Sources */,
 				21B521901979B0DA004BB5AD /* MGLoginFormViewController.m in Sources */,
 				2157FD25197B869300123CEB /* MGProfileViewController.m in Sources */,
 				2199D824197B50B900222361 /* UIColor+Hex.m in Sources */,
+				2137A166197DDC1D0074B5B1 /* MGGroupsListViewController.m in Sources */,
 				21E214A5197AF4BF004B16C7 /* MGSession.m in Sources */,
 				2157FD11197B7D8500123CEB /* UIImage+ImageEffects.m in Sources */,
 				21E2149F197AD54B004B16C7 /* MGIconButtonViewController.m in Sources */,
 				21E214AC197B0015004B16C7 /* MGConnectionQueues.m in Sources */,
+				2113146F197DD71200C51089 /* MGProfileTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

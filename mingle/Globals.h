@@ -56,6 +56,7 @@
 #define INVITE_ICON                         @"\ue75e"
 #define LOGOUT_ION                          @"\ue704"
 #define MAP_ICON                            @"\ue642"
+#define ME_ICON                             @"\ue6d7"
 #define MESSAGES_ICON                       @"\ue66f"
 #define NEW_ICON                            @"\ue702"
 #define PROFILE_ICON                        @"\ue674"

@@ -10,7 +10,7 @@
 #import "MGNavigationViewController.h"
 #import "MGSpringboardViewController.h"
 #import "MGEventBrowseViewController.h"
-#import "MGProfileViewController.h"
+#import "MGProfileTabViewController.h"
 #import "MGAppDelegate.h"
 #import "MGSession.h"
 
@@ -209,6 +209,7 @@
     }
     
     MGNavigationViewController *controller = nil;
+    NSDictionary *userData = [[MGSession instance] userData];
     MGAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
     switch(branch) {
@@ -227,7 +228,7 @@
             break;
             
         case PROFILE_BRANCH:
-            controller = [[MGProfileViewController alloc] initWithUserData:[[MGSession instance] userData]];
+            controller = [[MGProfileTabViewController alloc] initWithUserData:userData personal:YES];
             break;
             
         case INVITE_BRANCH:
