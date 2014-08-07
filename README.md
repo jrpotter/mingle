@@ -1,3 +1,5 @@
 mingle
 ======
-The following is a means of enabling people to join events occurring around them. This is the XCode project and Django project.
+[PAUSED DEVELOPMENT - 08/06/2014]
+
+The following includes both the Objective-C and Django code...I will fill out this README later on.
